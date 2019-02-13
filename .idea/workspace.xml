@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="ed80a2e0-2e85-4aa7-8b4b-8d20f86158c7" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/resources/js/pages/Query/AddQuery.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
@@ -10,6 +11,9 @@
       <change beforePath="$PROJECT_DIR$/resources/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/pages/Dashboard/QueryOverview.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/Dashboard/QueryOverview.js" afterDir="false" />
     </list>
+=======
+    <list default="true" id="ed80a2e0-2e85-4aa7-8b4b-8d20f86158c7" name="Default Changelist" comment="" />
+>>>>>>> 8917fc6ec3a48044e8fce12c6f9c0f494f2061df
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +26,7 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/resources/js/pages/Dashboard/Dashboard.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
@@ -29,10 +34,17 @@
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
+=======
+        <entry file="file://$PROJECT_DIR$/storage/logs/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+>>>>>>> 8917fc6ec3a48044e8fce12c6f9c0f494f2061df
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/js/pages/Query/AddQuery.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -41,10 +53,23 @@
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_13_003907_create_callers_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+>>>>>>> 8917fc6ec3a48044e8fce12c6f9c0f494f2061df
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -59,11 +84,19 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
               <caret line="15" column="16" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="16" />
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/QueryController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+>>>>>>> 8917fc6ec3a48044e8fce12c6f9c0f494f2061df
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/resources/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
@@ -71,11 +104,18 @@
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
+=======
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+>>>>>>> 8917fc6ec3a48044e8fce12c6f9c0f494f2061df
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/resources/js/pages/Operators/Operators.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
@@ -83,11 +123,18 @@
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
+=======
+        <entry file="file://$PROJECT_DIR$/app/Caller.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+>>>>>>> 8917fc6ec3a48044e8fce12c6f9c0f494f2061df
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/resources/js/pages/Operators/OperatorsOverview.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
@@ -95,6 +142,39 @@
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
+=======
+        <entry file="file://$PROJECT_DIR$/app/operator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="10" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/specialists.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/problem_specialist.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/problem_query.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+>>>>>>> 8917fc6ec3a48044e8fce12c6f9c0f494f2061df
             </state>
           </provider>
         </entry>
@@ -144,6 +224,7 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_02_09_154143_updat_problem_operators_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_02_09_154455_updat_problem_operators_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_02_09_221624_update_column_values_query_table.php" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/resources/js/components/Blog.js" />
         <option value="$PROJECT_DIR$/resources/js/components/Dashboard/Dashboard.js" />
         <option value="$PROJECT_DIR$/resources/js/components/Example.js" />
@@ -178,6 +259,18 @@
         <option value="$PROJECT_DIR$/resources/js/index.js" />
         <option value="$PROJECT_DIR$/resources/js/pages/Query/AddQuery.js" />
         <option value="$PROJECT_DIR$/resources/js/pages/Dashboard/QueryOverview.js" />
+=======
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app/problem_specialist.php" />
+        <option value="$PROJECT_DIR$/app/caller.php" />
+        <option value="$PROJECT_DIR$/app/operator.php" />
+        <option value="$PROJECT_DIR$/app/problem_query.php" />
+        <option value="$PROJECT_DIR$/app/specialist.php" />
+        <option value="$PROJECT_DIR$/app/specialists.php" />
+        <option value="$PROJECT_DIR$/app/Caller.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_02_13_003907_create_callers_table.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+>>>>>>> 8917fc6ec3a48044e8fce12c6f9c0f494f2061df
       </list>
     </option>
   </component>
@@ -272,9 +365,16 @@
       <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
     </include_path>
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="714" />
     <option name="height" value="900" />
+=======
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="23" />
+    <option name="width" value="1152" />
+    <option name="height" value="1225" />
+>>>>>>> 8917fc6ec3a48044e8fce12c6f9c0f494f2061df
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -286,12 +386,13 @@
         <subPane>
           <expand>
             <path>
-              <item name="team-projects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="team" type="b2602c69:ProjectViewProjectNode" />
               <item name="team-projects" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="team-projects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="team" type="b2602c69:ProjectViewProjectNode" />
               <item name="team-projects" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -299,16 +400,25 @@
               <item name="team-projects" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 8917fc6ec3a48044e8fce12c6f9c0f494f2061df
             </path>
             <path>
-              <item name="team-projects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="team" type="b2602c69:ProjectViewProjectNode" />
               <item name="team-projects" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 8917fc6ec3a48044e8fce12c6f9c0f494f2061df
             </path>
             <path>
-              <item name="team-projects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="team" type="b2602c69:ProjectViewProjectNode" />
               <item name="team-projects" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="vendor" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -321,11 +431,28 @@
             <path>
               <item name="team-projects" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+=======
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="team" type="b2602c69:ProjectViewProjectNode" />
+              <item name="team-projects" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="team" type="b2602c69:ProjectViewProjectNode" />
+              <item name="team-projects" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 8917fc6ec3a48044e8fce12c6f9c0f494f2061df
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -370,12 +497,19 @@
       <workItem from="1549716545550" duration="202000" />
       <workItem from="1549716815083" duration="9260000" />
       <workItem from="1549748323948" duration="2984000" />
+<<<<<<< HEAD
       <workItem from="1549890816687" duration="18781000" />
       <workItem from="1549987925519" duration="11003000" />
+=======
+      <workItem from="1549829020433" duration="9559000" />
+      <workItem from="1550021279074" duration="2068000" />
+      <workItem from="1550071199761" duration="542000" />
+>>>>>>> 8917fc6ec3a48044e8fce12c6f9c0f494f2061df
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="42230000" />
   </component>
   <component name="ToolWindowManager">
@@ -388,6 +522,18 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
+=======
+    <option name="totallyTimeSpent" value="24615000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1440" height="840" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21530758" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.28420123" />
+>>>>>>> 8917fc6ec3a48044e8fce12c6f9c0f494f2061df
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -396,13 +542,42 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.31686747" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32891566" />
+=======
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.11668928" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+>>>>>>> 8917fc6ec3a48044e8fce12c6f9c0f494f2061df
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
     </layout>
+<<<<<<< HEAD
+=======
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26666668" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.28420123" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.11668928" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout-to-restore>
+>>>>>>> 8917fc6ec3a48044e8fce12c6f9c0f494f2061df
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -410,6 +585,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_09_152959_updat_problem_specialists_table.php" />
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_09_154455_updat_problem_operators_table.php" />
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/operator.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -420,6 +596,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 8917fc6ec3a48044e8fce12c6f9c0f494f2061df
     <entry file="file://$PROJECT_DIR$/public/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -439,6 +617,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -468,12 +647,17 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_09_221624_update_column_values_query_table.php">
+=======
+    <entry file="file://$PROJECT_DIR$/config/database.php">
+>>>>>>> 8917fc6ec3a48044e8fce12c6f9c0f494f2061df
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+        <state relative-caret-position="705">
+          <caret line="47" column="50" selection-start-line="47" selection-start-column="50" selection-end-line="47" selection-end-column="50" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/Example.js" />
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_09_221624_update_column_values_query_table.php" />
     <entry file="file://$PROJECT_DIR$/public/svg/403.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -486,6 +670,7 @@
     <entry file="file://$PROJECT_DIR$/public/svg/503.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/public/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4267" />
@@ -744,6 +929,86 @@
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/specialist.php" />
+    <entry file="file://$PROJECT_DIR$/storage/logs/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_13_003907_create_callers_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Caller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/operator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="10" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/specialists.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/problem_specialist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/problem_query.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/QueryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+>>>>>>> 8917fc6ec3a48044e8fce12c6f9c0f494f2061df
         </state>
       </provider>
     </entry>

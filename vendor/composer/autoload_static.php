@@ -420,6 +420,7 @@ class ComposerStaticInit3e6dd2b28a8ea0f0d51bdb13c22491ff
     );
 
     public static $classMap = array (
+        'App\\Caller' => __DIR__ . '/../..' . '/app/Caller.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -442,7 +443,6 @@ class ComposerStaticInit3e6dd2b28a8ea0f0d51bdb13c22491ff
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
-        'App\\caller' => __DIR__ . '/../..' . '/app/caller.php',
         'App\\equipment' => __DIR__ . '/../..' . '/app/equipment.php',
         'App\\operating_system' => __DIR__ . '/../..' . '/app/operating_system.php',
         'App\\operator' => __DIR__ . '/../..' . '/app/operator.php',
