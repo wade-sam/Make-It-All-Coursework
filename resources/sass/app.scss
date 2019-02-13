@@ -8,7 +8,173 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+*{
+  margin: 0;
+  padding: 0;
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+// Login Page
+#login {
+  height: 100vh;
+  background-color: #D7C6B7;
+}
+
+#login-form {
+  width: 45%;
+  background-color: white;
+  padding: 50px;
+
+  button {
+    background-color: #4C78E6;
+    color: #fff;
+    border-radius: 30px;
+    padding: 10px 40px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+}
+
+// Navigation
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5%;
+  height: 100vh;
+  padding-top: 35px;
+  background-color:$blue;
+  text-align: center;
+  ul {
+    padding: 0;
+  }
+  ul li {
+    list-style-type: none;
+    margin-bottom: 35px;
+  }
+  ul li a{
+    color: #fff;
+    font-size: 17px;
+  }
+}
+
+// Profile
+#profile {
+  float: right;
+  width: 12%;
+
+  h1 {
+    margin-bottom: 0;
+  }
+}
+
+// Page Generic
+.page{
+  padding-left: 10%;
+}
+
+// Card
+.card {
+  background-color: $purple-grey;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  margin-left: 0;
+  margin-top: 20px;
+
+  .row {
+    padding: 20px;
+  }
+}
+
+// Dashboard
+#dashboard {
+  #queries-overview {
+    width: 50%;
+
+    .query-numbers div{
+      text-align: center;
+      border-right: 1px solid black;
+      span {
+        font-size: 45px;
+      }
+
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+
+  .specialists-overview {
+    width: 20%;
+    display: inline-block;
+    margin-top: 50px;
+
+    &:last-child {
+      margin-left: 30px !important;
+    }
+  }
+}
+
+
+// Queries
+#queries {
+  .query-card {
+    width: 80%;
+  }
+
+  .key-tag {
+    padding: 3px 20px;
+    background-color: $blue;
+    border-radius: 8px;
+    margin-right: 15px;
+  }
+
+  .additional-info-right {
+    position: absolute;
+    right: 20px;
+    top: 60px;
+  }
+}
+
+// Assets
+#assets {
+  .asset-card {
+    width: 25%;
+    display: inline-block;
+    margin-right: 25px;
+
+    .asset {
+      border-top: 1px solid $blue;
+      border-bottom: 1px solid $blue;
+      padding: 10px;
+      position: relative;
+    }
+
+    .serial-no {
+      position: absolute;
+      right: 5px;
+      top: 13px;
+      padding: 2px 10px;
+      background-color: $blue;
+      border-radius: 8px;
+    }
+  }
+}
+
+// Analytics
+.analytics-card {
+  width: 20%;
+  text-align: center;
+  display: inline-block;
+}
+
+
+// Operators
+.operators-overview {
+  width: 25%;
+  display: inline-block;
+  margin-right: 20px;
 }
