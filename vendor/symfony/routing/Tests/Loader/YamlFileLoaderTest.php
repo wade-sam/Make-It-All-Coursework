@@ -82,7 +82,7 @@ class YamlFileLoaderTest extends TestCase
         $this->assertInstanceOf('Symfony\Component\Routing\Route', $route);
         $this->assertSame('/blog/{slug}', $route->getPath());
         $this->assertSame('{locale}.example.com', $route->getHost());
-        $this->assertSame('MyBundle:Blog:show', $route->getDefault('_controller'));
+        $this->assertSame('MyBundle:Login:show', $route->getDefault('_controller'));
         $this->assertSame('\w+', $route->getRequirement('locale'));
         $this->assertSame('RouteCompiler', $route->getOption('compiler_class'));
         $this->assertEquals(['GET', 'POST', 'PUT', 'OPTIONS'], $route->getMethods());
@@ -136,7 +136,7 @@ class YamlFileLoaderTest extends TestCase
 
         $route = $routeCollection->get('app_blog');
 
-        $this->assertSame('AppBundle:Blog:list', $route->getDefault('_controller'));
+        $this->assertSame('AppBundle:Login:list', $route->getDefault('_controller'));
     }
 
     /**

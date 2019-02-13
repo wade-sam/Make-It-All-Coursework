@@ -87,7 +87,7 @@ class GuidStringCodec extends StringCodec
     /**
      * Swaps fields to support GUID byte order
      *
-     * @param array $components An array of UUID components (the UUID exploded on its dashes)
+     * @param array $components An array of UUID pages (the UUID exploded on its dashes)
      * @return void
      */
     protected function swapFields(array &$components)

@@ -5,7 +5,7 @@ app_homepage:
 app_blog:
     path: /blog
     defaults:
-        _controller: AppBundle:Blog:list
+        _controller: AppBundle:Login:list
 
 app_logout:
     path: /logout

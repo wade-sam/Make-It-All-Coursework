@@ -17,7 +17,7 @@ class MySqlGrammar extends Grammar
     protected $operators = ['sounds like'];
 
     /**
-     * The components that make up a select clause.
+     * The pages that make up a select clause.
      *
      * @var array
      */

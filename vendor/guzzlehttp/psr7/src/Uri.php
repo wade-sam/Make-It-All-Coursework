@@ -86,7 +86,7 @@ class Uri implements UriInterface
     }
 
     /**
-     * Composes a URI reference string from its various components.
+     * Composes a URI reference string from its various pages.
      *
      * Usually this method does not need to be called manually but instead is used indirectly via
      * `Psr\Http\Message\UriInterface::__toString`.
@@ -352,14 +352,14 @@ class Uri implements UriInterface
     }
 
     /**
-     * Creates a URI from a hash of `parse_url` components.
+     * Creates a URI from a hash of `parse_url` pages.
      *
      * @param array $parts
      *
      * @return UriInterface
      * @link http://php.net/manual/en/function.parse-url.php
      *
-     * @throws \InvalidArgumentException If the components do not form a valid URI.
+     * @throws \InvalidArgumentException If the pages do not form a valid URI.
      */
     public static function fromParts(array $parts)
     {

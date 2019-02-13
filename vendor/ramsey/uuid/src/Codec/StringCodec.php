@@ -113,7 +113,7 @@ class StringCodec implements CodecInterface
     }
 
     /**
-     * Returns an array of UUID components (the UUID exploded on its dashes)
+     * Returns an array of UUID pages (the UUID exploded on its dashes)
      *
      * @param string $encodedUuid
      * @return array

@@ -89,7 +89,7 @@ class RouteCollectionBuilderTest extends TestCase
         $collectionBuilder = new RouteCollectionBuilder();
 
         $addedRoute = $collectionBuilder->add('/checkout', 'AppBundle:Order:checkout');
-        $addedRoute2 = $collectionBuilder->add('/blogs', 'AppBundle:Blog:list', 'blog_list');
+        $addedRoute2 = $collectionBuilder->add('/blogs', 'AppBundle:Login:list', 'blog_list');
         $this->assertInstanceOf('Symfony\Component\Routing\Route', $addedRoute);
         $this->assertEquals('AppBundle:Order:checkout', $addedRoute->getDefault('_controller'));
 
@@ -153,7 +153,7 @@ class RouteCollectionBuilderTest extends TestCase
         // add a "named" route
         $collectionBuilder->add('/admin', 'AppBundle:Admin:dashboard', 'admin_dashboard');
         // add an unnamed route
-        $collectionBuilder->add('/blogs', 'AppBundle:Blog:list')
+        $collectionBuilder->add('/blogs', 'AppBundle:Login:list')
             ->setMethods(['GET']);
 
         // integer route names are allowed - they don't confuse things

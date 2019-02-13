@@ -87,7 +87,7 @@ class TimestampFirstCombCodec extends StringCodec
     /**
      * Swaps the first 48 bits with the last 48 bits
      *
-     * @param array $components An array of UUID components (the UUID exploded on its dashes)
+     * @param array $components An array of UUID pages (the UUID exploded on its dashes)
      *
      * @return void
      */

@@ -38,7 +38,7 @@ class XmlFileLoaderTest extends TestCase
         $this->assertInstanceOf('Symfony\Component\Routing\Route', $route);
         $this->assertSame('/blog/{slug}', $route->getPath());
         $this->assertSame('{locale}.example.com', $route->getHost());
-        $this->assertSame('MyBundle:Blog:show', $route->getDefault('_controller'));
+        $this->assertSame('MyBundle:Login:show', $route->getDefault('_controller'));
         $this->assertSame('\w+', $route->getRequirement('locale'));
         $this->assertSame('RouteCompiler', $route->getOption('compiler_class'));
         $this->assertEquals(['GET', 'POST', 'PUT', 'OPTIONS'], $route->getMethods());
@@ -56,7 +56,7 @@ class XmlFileLoaderTest extends TestCase
         $route = $routeCollection->get('blog_show');
         $this->assertSame('/blog/{slug}', $route->getPath());
         $this->assertSame('{_locale}.example.com', $route->getHost());
-        $this->assertSame('MyBundle:Blog:show', $route->getDefault('_controller'));
+        $this->assertSame('MyBundle:Login:show', $route->getDefault('_controller'));
         $this->assertSame('\w+', $route->getRequirement('slug'));
         $this->assertSame('en|fr|de', $route->getRequirement('_locale'));
         $this->assertNull($route->getDefault('slug'));
@@ -179,7 +179,7 @@ class XmlFileLoaderTest extends TestCase
 
         $this->assertSame(
             [
-                '_controller' => 'AcmeBlogBundle:Blog:index',
+                '_controller' => 'AcmeBlogBundle:Login:index',
                 'slug' => null,
                 'published' => true,
                 'page' => 1,
@@ -202,7 +202,7 @@ class XmlFileLoaderTest extends TestCase
 
         $this->assertSame(
             [
-                '_controller' => 'AcmeBlogBundle:Blog:index',
+                '_controller' => 'AcmeBlogBundle:Login:index',
                 'values' => [true, 1, 3.5, 'foo'],
             ],
             $route->getDefaults()
@@ -217,7 +217,7 @@ class XmlFileLoaderTest extends TestCase
 
         $this->assertSame(
             [
-                '_controller' => 'AcmeBlogBundle:Blog:index',
+                '_controller' => 'AcmeBlogBundle:Login:index',
                 'values' => [[true, 1, 3.5, 'foo']],
             ],
             $route->getDefaults()
@@ -232,7 +232,7 @@ class XmlFileLoaderTest extends TestCase
 
         $this->assertSame(
             [
-                '_controller' => 'AcmeBlogBundle:Blog:index',
+                '_controller' => 'AcmeBlogBundle:Login:index',
                 'values' => ['list' => [true, 1, 3.5, 'foo']],
             ],
             $route->getDefaults()
@@ -247,7 +247,7 @@ class XmlFileLoaderTest extends TestCase
 
         $this->assertSame(
             [
-                '_controller' => 'AcmeBlogBundle:Blog:index',
+                '_controller' => 'AcmeBlogBundle:Login:index',
                 'values' => [
                     'public' => true,
                     'page' => 1,
@@ -267,7 +267,7 @@ class XmlFileLoaderTest extends TestCase
 
         $this->assertSame(
             [
-                '_controller' => 'AcmeBlogBundle:Blog:index',
+                '_controller' => 'AcmeBlogBundle:Login:index',
                 'values' => [[
                     'public' => true,
                     'page' => 1,
@@ -287,7 +287,7 @@ class XmlFileLoaderTest extends TestCase
 
         $this->assertSame(
             [
-                '_controller' => 'AcmeBlogBundle:Blog:index',
+                '_controller' => 'AcmeBlogBundle:Login:index',
                 'values' => ['map' => [
                     'public' => true,
                     'page' => 1,
@@ -354,7 +354,7 @@ class XmlFileLoaderTest extends TestCase
 
         $route = $routeCollection->get('app_blog');
 
-        $this->assertSame('AppBundle:Blog:list', $route->getDefault('_controller'));
+        $this->assertSame('AppBundle:Login:list', $route->getDefault('_controller'));
     }
 
     /**

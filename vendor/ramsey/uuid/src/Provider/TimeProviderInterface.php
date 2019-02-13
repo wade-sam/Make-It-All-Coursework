@@ -23,7 +23,7 @@ interface TimeProviderInterface
     /**
      * Returns a timestamp array
      *
-     * @return int[] Array guaranteed to contain `sec` and `usec` components of a timestamp
+     * @return int[] Array guaranteed to contain `sec` and `usec` pages of a timestamp
      */
     public function currentTime();
 }

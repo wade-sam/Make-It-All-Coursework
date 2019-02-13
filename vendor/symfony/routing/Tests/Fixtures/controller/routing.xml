@@ -7,7 +7,7 @@
     <route id="app_homepage" path="/" controller="AppBundle:Homepage:show" />
 
     <route id="app_blog" path="/blog">
-        <default key="_controller">AppBundle:Blog:list</default>
+        <default key="_controller">AppBundle:Login:list</default>
     </route>
 
     <route id="app_logout" path="/logout" />
