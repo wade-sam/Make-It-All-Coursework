@@ -44,11 +44,11 @@ class RouteTest extends TestCase
     public function getValidParameters()
     {
         return [
-            ['value', '/Blog', 'getPath'],
+            ['value', '/Login', 'getPath'],
             ['requirements', ['locale' => 'en'], 'getRequirements'],
             ['options', ['compiler_class' => 'RouteCompiler'], 'getOptions'],
             ['name', 'blog_index', 'getName'],
-            ['defaults', ['_controller' => 'MyBlogBundle:Blog:index'], 'getDefaults'],
+            ['defaults', ['_controller' => 'MyBlogBundle:Login:index'], 'getDefaults'],
             ['schemes', ['https'], 'getSchemes'],
             ['methods', ['GET', 'POST'], 'getMethods'],
             ['host', '{locale}.example.com', 'getHost'],

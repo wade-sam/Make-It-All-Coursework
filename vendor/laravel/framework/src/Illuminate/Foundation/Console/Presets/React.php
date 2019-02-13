@@ -55,12 +55,12 @@ class React extends Preset
     protected static function updateComponent()
     {
         (new Filesystem)->delete(
-            resource_path('js/components/ExampleComponent.vue')
+            resource_path('js/pages/ExampleComponent.vue')
         );
 
         copy(
             __DIR__.'/react-stubs/Example.js',
-            resource_path('js/components/Example.js')
+            resource_path('js/pages/Example.js')
         );
     }
 

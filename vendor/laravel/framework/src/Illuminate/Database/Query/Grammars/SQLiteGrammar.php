@@ -9,7 +9,7 @@ use Illuminate\Database\Query\Builder;
 class SQLiteGrammar extends Grammar
 {
     /**
-     * The components that make up a select clause.
+     * The pages that make up a select clause.
      *
      * @var array
      */

@@ -122,7 +122,7 @@ function stream_for($resource = '', array $options = [])
  * data of the header. When a parameter does not contain a value, but just
  * contains a key, this function will inject a key with a '' string value.
  *
- * @param string|array $header Header to parse into components.
+ * @param string|array $header Header to parse into pages.
  *
  * @return array Returns the parsed header values.
  */

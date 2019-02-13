@@ -105,7 +105,7 @@ final class Serializer extends AbstractSerializer
     }
 
     /**
-     * Retrieve the components of the request line.
+     * Retrieve the pages of the request line.
      *
      * Retrieves the first line of the stream and parses it, raising an
      * exception if it does not follow specifications; if valid, returns a list

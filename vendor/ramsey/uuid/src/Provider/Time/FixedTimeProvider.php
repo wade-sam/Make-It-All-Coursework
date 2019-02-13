@@ -25,15 +25,15 @@ use Ramsey\Uuid\Provider\TimeProviderInterface;
 class FixedTimeProvider implements TimeProviderInterface
 {
     /**
-     * @var int[] Array containing `sec` and `usec` components of a timestamp
+     * @var int[] Array containing `sec` and `usec` pages of a timestamp
      */
     private $fixedTime;
 
     /**
      * Constructs a `FixedTimeProvider` using the provided `$timestamp`
      *
-     * @param int[] Array containing `sec` and `usec` components of a timestamp
-     * @throws \InvalidArgumentException if the `$timestamp` does not contain `sec` or `usec` components
+     * @param int[] Array containing `sec` and `usec` pages of a timestamp
+     * @throws \InvalidArgumentException if the `$timestamp` does not contain `sec` or `usec` pages
      */
     public function __construct(array $timestamp)
     {
@@ -67,7 +67,7 @@ class FixedTimeProvider implements TimeProviderInterface
     /**
      * Returns a timestamp array
      *
-     * @return int[] Array containing `sec` and `usec` components of a timestamp
+     * @return int[] Array containing `sec` and `usec` pages of a timestamp
      */
     public function currentTime()
     {

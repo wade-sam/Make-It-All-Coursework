@@ -158,7 +158,7 @@ final class StandardTagFactory implements TagFactory
     }
 
     /**
-     * Extracts all components for a tag.
+     * Extracts all pages for a tag.
      *
      * @param string $tagLine
      *

@@ -5,6 +5,6 @@
         http://symfony.com/schema/routing/routing-1.0.xsd">
 
     <route id="app_blog" path="/blog" controller="AppBundle:Homepage:show">
-        <default key="_controller">AppBundle:Blog:index</default>
+        <default key="_controller">AppBundle:Login:index</default>
     </route>
 </routes>

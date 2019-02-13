@@ -24,7 +24,7 @@ class SystemTimeProvider implements TimeProviderInterface
     /**
      * Returns a timestamp array
      *
-     * @return int[] Array containing `sec` and `usec` components of a timestamp
+     * @return int[] Array containing `sec` and `usec` pages of a timestamp
      */
     public function currentTime()
     {

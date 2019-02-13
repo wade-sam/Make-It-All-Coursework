@@ -2,4 +2,4 @@ app_blog:
     path: /blog
     controller: AppBundle:Homepage:show
     defaults:
-        _controller: AppBundle:Blog:index
+        _controller: AppBundle:Login:index

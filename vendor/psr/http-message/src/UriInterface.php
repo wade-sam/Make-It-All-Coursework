@@ -299,9 +299,9 @@ interface UriInterface
     /**
      * Return the string representation as a URI reference.
      *
-     * Depending on which components of the URI are present, the resulting
+     * Depending on which pages of the URI are present, the resulting
      * string is either a full URI or relative reference according to RFC 3986,
-     * Section 4.1. The method concatenates the various components of the URI,
+     * Section 4.1. The method concatenates the various pages of the URI,
      * using the appropriate delimiters:
      *
      * - If a scheme is present, it MUST be suffixed by ":".

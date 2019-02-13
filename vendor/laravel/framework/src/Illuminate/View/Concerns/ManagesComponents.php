@@ -7,7 +7,7 @@ use Illuminate\Support\HtmlString;
 trait ManagesComponents
 {
     /**
-     * The components being rendered.
+     * The pages being rendered.
      *
      * @var array
      */

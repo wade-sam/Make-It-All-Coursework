@@ -5,6 +5,6 @@
         http://symfony.com/schema/routing/routing-1.0.xsd">
 
     <import resource="routing.xml" controller="FrameworkBundle:Template:template">
-        <default key="_controller">AppBundle:Blog:index</default>
+        <default key="_controller">AppBundle:Login:index</default>
     </import>
 </routes>

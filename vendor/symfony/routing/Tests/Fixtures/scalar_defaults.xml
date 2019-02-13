@@ -6,7 +6,7 @@
 
     <route id="blog" path="/blog">
         <default key="_controller">
-            <string>AcmeBlogBundle:Blog:index</string>
+            <string>AcmeBlogBundle:Login:index</string>
         </default>
         <default key="slug" xsi:nil="true" />
         <default key="published">
