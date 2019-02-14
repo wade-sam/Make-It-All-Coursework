@@ -26,4 +26,16 @@ class problem_query extends Model
     {
         return $this->belongsTo(caller::class);
     }
+
+    public function equipment_query_relationship(){
+        return $this->hasOne(equipment::class);
+    }
+
+    public function software_query_relationship(){
+        return $this->hasOne(software_details::class);
+    }
+
+    public function os_query_relationship(){
+        return $this->hasOne(operating_system::class);
+    }
 }

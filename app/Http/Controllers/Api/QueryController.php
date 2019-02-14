@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use Illuminate\Support\Facades\DB;
 use App\problem_query;
 use function GuzzleHttp\Promise\all;
 use Illuminate\Http\Request;
@@ -17,10 +18,21 @@ class QueryController extends Controller
     //This is used to list the queries on the Queries page
     public function index()
     {
+        /*
         //$queries = problem_query::all();
         $queries = problem_query::orderBy('due_date','asc')->paginate(10);
         return response()->json($queries);
+        */
+        $data = DB::table('problem_queries')
+            ->join('specialists','specialists.specialist_id','=','problem_queries.specialist_id')
+            ->join('operators','operators.operator_id','=','problem_queries.operator_id')
+            ->select('problem_queries.query_id','specialists.first_name','specialists.last_name','operators.First_Name',
+                'operators.Last_Name','problem_queries.system_name','problem_queries.serial_number','problem_queries.title',
+                'problem_queries.description','problem_queries.notes','problem_queries.type','problem_queries.priority','problem_queries.created_at',
+                'problem_queries.updated_at')
+            ->get();
 
+        return response()->json($data);
 
     }
 
@@ -57,8 +69,18 @@ class QueryController extends Controller
     //This is used to show the individual query. Will be used in the Query.js file
     public function show($id)
     {
-        $ShowQuery = problem_query::find($id);
-        return response()->json($ShowQuery);
+        //$ShowQuery = problem_query::find($id);
+        $displayQuery=DB::table('problem_queries')
+            ->join('specialists','specialists.specialist_id','=','problem_queries.specialist_id')
+            ->join('operators','operators.operator_id','=','problem_queries.operator_id')
+            ->where('problem_queries.query_id','=',$id)
+            ->select('problem_queries.query_id','specialists.first_name','specialists.last_name','operators.First_Name',
+                'operators.Last_Name','problem_queries.system_name','problem_queries.serial_number','problem_queries.title',
+                'problem_queries.description','problem_queries.notes','problem_queries.type','problem_queries.priority','problem_queries.created_at',
+                'problem_queries.updated_at')
+
+            ->get();
+        return response()->json($displayQuery);
     }
 
     /**
