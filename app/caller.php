@@ -4,10 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class specialists extends Model
+class Caller extends Model
 {
     public function display_queries(){
         return $this->hasMany(problem_query::class);
     }
-
 }

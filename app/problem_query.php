@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class problem_query extends Model
 {
-    //only these 3 attributes are able to be filled
+
+    protected $primaryKey = 'query_id';
     protected $fillable = array('operator_id','specialist_id','caller_name','title', 'description', 'notes', 'type', 'due_date');
 
     //defining the relationships
@@ -20,7 +21,9 @@ class problem_query extends Model
         return $this->belongsTo(specialist::class);
     }
     //Each Query has one Caller
-    public function caller(){
+
+    public function caller()
+    {
         return $this->belongsTo(caller::class);
     }
 }
