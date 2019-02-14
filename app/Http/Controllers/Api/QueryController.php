@@ -36,6 +36,19 @@ class QueryController extends Controller
 
     }
 
+    public function QueriesOverview(){
+        $queryPriority = DB::table('problem_queries')
+            ->select(problem_queries.priority)
+            ->get();
+        return response()->json($queryPriority);
+    }
+
+    public function specialists_status(){
+        $specialists = DB::table('problem_queries')
+            ->join('specialists','specialists.specialist_id','=','problem_queries.specialist_id')
+            ->select('specialists.first_name','specialists.last_name','');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
