@@ -17,11 +17,11 @@ export default class Index extends Component {
                 <div className="main-app">
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/dashboard" component={Dashboard} />
-                    <Route exact path="/" component={Queries} />
+                    <Route exact path="/queries" component={Queries} />
                     <Route exact path="/assets" component={Assets} />
                     <Route exact path="/analytics" component={Analytics} />
                     <Route exact path="/operators" component={Operators} />
-                    <Route exact path="/add-query" component={AddQuery} />
+                    <Route exact path="/" component={AddQuery} />
                 </div>
             </BrowserRouter>
         );
