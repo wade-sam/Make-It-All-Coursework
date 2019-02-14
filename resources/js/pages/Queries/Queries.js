@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import Nav from '../../components/Nav';
 import Profile from '../../components/Profile';
@@ -20,6 +21,25 @@ const queryData = [
 ];
 
 class Queries extends Component {
+    constructor (props) {
+        super(props);
+
+        this.state =  {
+            query: [],
+        }
+    }
+
+    componentWillMount() {
+        axios.get('/api/query').then(res => {
+            this.setState({
+               query: res.data,
+            });
+            console.log(res.data);
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+
     render() {
         return (
             <div className="page" id="queries">
