@@ -7,56 +7,66 @@ import Profile from '../../components/Profile';
 import Query from './Query';
 
 
-const queryData = [
-    {
-        hardware: 'Printer',
-        serialNo: 23,
-        title: 3,
-        id: 5566,
-        reporter: 'John Doe',
-        reportDate: '10.10.2019',
-        dueDate: '20.11.2019',
-        specialist: 'Olivia Oliver'
-    }
-];
+// const queryData = [
+//     {
+//         hardware: 'Printer',
+//         serialNo: 23,
+//         title: 3,
+//         id: 5566,
+//         reporter: 'John Doe',
+//         reportDate: '10.10.2019',
+//         dueDate: '20.11.2019',
+//         specialist: 'Olivia Oliver'
+//     }
+// ];
 
 class Queries extends Component {
     constructor (props) {
         super(props);
 
         this.state =  {
-            query: [],
+            queres: [],
         }
     }
 
     componentWillMount() {
         axios.get('/api/query').then(res => {
             this.setState({
-               query: res.data,
+               queries: res.data.data,
             });
-            console.log(res.data);
         }).catch(err => {
             console.log(err);
         })
     }
 
     render() {
+        const { queries } = this.state;
         return (
             <div className="page" id="queries">
                 <Nav />
                 <Profile />
                 <h1> Queries </h1>
                 <span><Link to="/query"> Add new + </Link></span>
-                <Query
-                    hardware={queryData[0].hardware}
-                    serialNo={queryData[0].serialNo}
-                    title={queryData[0].title}
-                    id={queryData[0].id}
-                    reporter={queryData[0].reporter}
-                    reportDate={queryData[0].reportDate}
-                    dueDate={queryData[0].dueDate}
-                    specialist={queryData[0].specialist}
-                />
+                {
+                    queries ? (
+                        queries.map(query => {
+                            console.log(query);
+
+                            return (
+                                <Query
+                                    hardware="Hardware"
+                                    serialNo="Serial No"
+                                    title={query.query_title}
+                                    id={query.query_id}
+                                    reporter="Reporter"
+                                    reportDate={query.updated_at}
+                                    dueDate={query.due_date}
+                                    specialist="Specialist"
+                                />
+                            )
+                        })
+                    ) : null
+                }
             </div>
         );
     }
