@@ -1,4 +1,5 @@
 
+.env.php
 .workspace.xml
 .phpunit.result.cache
 npm-debug.log
