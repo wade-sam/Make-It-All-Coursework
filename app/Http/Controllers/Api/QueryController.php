@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\problem_query;
+use function GuzzleHttp\Promise\all;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -16,8 +17,8 @@ class QueryController extends Controller
     //This is used to list the queries on the Queries page
     public function index()
     {
-        $queries = problem_query::all();
-
+        //$queries = problem_query::all();
+        $queries = problem_query::orderBy('due_date','asc')->paginate(10);
         return response()->json($queries);
 
 
@@ -41,7 +42,10 @@ class QueryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        problem_query::created($request->all());
+        return (['message' => 'task was succesful']);
+
+
     }
 
     /**
