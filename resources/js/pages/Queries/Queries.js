@@ -32,7 +32,7 @@ class Queries extends Component {
     componentWillMount() {
         axios.get('/api/query').then(res => {
             this.setState({
-               queries: res.data.data,
+               queries: res.data,
             });
         }).catch(err => {
             console.log(err);
@@ -50,8 +50,6 @@ class Queries extends Component {
                 {
                     queries ? (
                         queries.map(query => {
-                            console.log(query);
-
                             return (
                                 <Query
                                     hardware="Hardware"
@@ -62,6 +60,7 @@ class Queries extends Component {
                                     reportDate={query.updated_at}
                                     dueDate={query.due_date}
                                     specialist="Specialist"
+                                    key={query.query_id}
                                 />
                             )
                         })
