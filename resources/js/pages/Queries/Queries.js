@@ -7,19 +7,6 @@ import Profile from '../../components/Profile';
 import Query from './Query';
 
 
-// const queryData = [
-//     {
-//         hardware: 'Printer',
-//         serialNo: 23,
-//         title: 3,
-//         id: 5566,
-//         reporter: 'John Doe',
-//         reportDate: '10.10.2019',
-//         dueDate: '20.11.2019',
-//         specialist: 'Olivia Oliver'
-//     }
-// ];
-
 class Queries extends Component {
     constructor (props) {
         super(props);
@@ -52,14 +39,16 @@ class Queries extends Component {
                         queries.map(query => {
                             return (
                                 <Query
-                                    hardware="Hardware"
-                                    serialNo="Serial No"
-                                    title={query.query_title}
+                                    hardware={query.system_name}
+                                    serialNo={query.serial_number}
+                                    title={query.title}
                                     id={query.query_id}
-                                    reporter="Reporter"
-                                    reportDate={query.updated_at}
+                                    reporter={`${query.First_Name} ${query.Last_Name}`}
+                                    reportDate={query.created_at}
                                     dueDate={query.due_date}
-                                    specialist="Specialist"
+                                    specialist={`${query.first_name} ${query.last_name}`}
+                                    priority={query.priority}
+                                    status="status"
                                     key={query.query_id}
                                 />
                             )
