@@ -17,4 +17,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('dashboard/queriesOverview','Api\QueryController@queriesOverview');
+Route::get('dashboard/specialistsStatus','Api\QueryController@specialistsStatus');
 Route::resource('query','Api\QueryController');

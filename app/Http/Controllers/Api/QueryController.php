@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use function GuzzleHttp\Psr7\get_message_body_summary;
 use Illuminate\Support\Facades\DB;
 use App\problem_query;
 use function GuzzleHttp\Promise\all;
@@ -28,26 +29,37 @@ class QueryController extends Controller
             ->join('operators','operators.operator_id','=','problem_queries.operator_id')
             ->select('problem_queries.query_id','specialists.first_name','specialists.last_name','operators.First_Name',
                 'operators.Last_Name','problem_queries.system_name','problem_queries.serial_number','problem_queries.title',
-                'problem_queries.description','problem_queries.notes','problem_queries.type','problem_queries.priority','problem_queries.created_at',
-                'problem_queries.updated_at')
+                'problem_queries.description','problem_queries.notes','problem_queries.type','problem_queries.priority','problem_queries.status',
+                'problem_queries.due_date','problem_queries.created_at', 'problem_queries.updated_at')
             ->get();
 
         return response()->json($data);
 
     }
 
-    public function QueriesOverview(){
+    public function queriesOverview(){
         $queryPriority = DB::table('problem_queries')
-            ->select(problem_queries.priority)
+            ->select('problem_queries.query_id','problem_queries.priority')
             ->get();
         return response()->json($queryPriority);
     }
 
-    public function specialists_status(){
+    public function specialistsStatus(){
+        /*
         $specialists = DB::table('problem_queries')
             ->join('specialists','specialists.specialist_id','=','problem_queries.specialist_id')
-            ->select('specialists.first_name','specialists.last_name','');
-    }
+            ->select('specialists.first_name','specialists.last_name','problem_queries.query_id','problem_queries.due_date','problem_queries.status','specialists.status','specialists.')
+            ->get();
+            return response()->json($specialists);
+    */
+        $specialists = DB::table('problem_queries')
+            ->join('specialists','specialists.specialist_id','=','problem_queries.specialist_id')
+            ->select('problem_queries.query_id','problem_queries.status','problem_queries.due_date','specialists.first_name','specialists.last_name','specialists.specialist_status')
+            ->get();
+
+        return response()->json($specialists);
+        }
+
 
     /**
      * Show the form for creating a new resource.
