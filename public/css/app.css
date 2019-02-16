@@ -10561,17 +10561,22 @@ nav ul li a {
 .card {
   background-color: #F4F4FC;
   padding: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 10px 11px rgba(0, 0, 0, 0.22);
   margin-left: 0;
   margin-top: 20px;
 }
 
 .card .row {
-  padding: 20px;
+  padding: 20px 25px;
 }
 
 #dashboard #queries-overview {
   width: 50%;
+}
+
+#dashboard #queries-overview #add-new-btn {
+  padding-top: 7px;
+  margin-left: 12px;
 }
 
 #dashboard #queries-overview .query-numbers div {
@@ -10581,6 +10586,7 @@ nav ul li a {
 
 #dashboard #queries-overview .query-numbers div span {
   font-size: 45px;
+  font-weight: bold;
 }
 
 #dashboard #queries-overview .query-numbers div:last-child {
@@ -10595,6 +10601,10 @@ nav ul li a {
 
 #dashboard .specialists-overview:last-child {
   margin-left: 30px !important;
+}
+
+#dashboard .specialists-overview span {
+  margin-right: 10px;
 }
 
 #queries .query-card {
@@ -10612,6 +10622,10 @@ nav ul li a {
   position: absolute;
   right: 20px;
   top: 60px;
+}
+
+#queries .additional-info-right i {
+  margin-right: 5px;
 }
 
 #assets .asset-card {

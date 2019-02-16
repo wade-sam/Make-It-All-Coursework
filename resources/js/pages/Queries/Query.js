@@ -2,26 +2,26 @@ import React, {Component} from 'react';
 
 class Query extends Component {
     render() {
-        const {hardware, serialNo, title, id, reporter, reportDate, dueDate, specialist, priority, status} = this.props;
+        const {hardware, type, title, id, reporter, reportDate, dueDate, specialist, priority, status} = this.props;
 
         return (
             <div className="container card query-card">
                 <div className="row">
                     <span className="key-tag">{hardware}</span>
-                    <span className="key-tag">{serialNo}</span>
+                    <span className="key-tag">{type}</span>
                 </div>
                 <div className="row">
                     <h2>{title} #{id}</h2>
                 </div>
                 <div className="row">
-                    <div className="col-md-3">Reporter: {reporter}</div>
-                    <div className="col-md-3">Reported: {reportDate}</div>
-                    <div className="col-md-3">Due: {dueDate}</div>
+                    <div className="col-md-3"><b>Reporter:</b> {reporter}</div>
+                    <div className="col-md-3"><b>Reported:</b> {reportDate}</div>
+                    <div className="col-md-3"><b>Due:</b> {dueDate}</div>
                 </div>
                 <div className="additional-info-right">
-                    <p>{priority}</p>
-                    <p>{status}</p>
-                    <p>{specialist}</p>
+                    <p><i className="fas fa-exclamation-triangle" />{priority}</p>
+                    <p><i className="fas fa-chart-line" /> {status}</p>
+                    <p><i className="fas fa-user" /> {specialist}</p>
                 </div>
             </div>
         );

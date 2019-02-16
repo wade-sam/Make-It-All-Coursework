@@ -40,7 +40,7 @@ class Queries extends Component {
                             return (
                                 <Query
                                     hardware={query.system_name}
-                                    serialNo={query.serial_number}
+                                    type={query.type}
                                     title={query.title}
                                     id={query.query_id}
                                     reporter={`${query.First_Name} ${query.Last_Name}`}
