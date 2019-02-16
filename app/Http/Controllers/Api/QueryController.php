@@ -32,8 +32,8 @@ class QueryController extends Controller
                 'problem_queries.description','problem_queries.notes','problem_queries.type','problem_queries.priority','problem_queries.status',
                 'problem_queries.due_date','problem_queries.created_at', 'problem_queries.updated_at')
             ->get();
-
         return response()->json($data);
+
 
     }
 
