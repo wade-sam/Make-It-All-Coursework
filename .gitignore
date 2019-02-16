@@ -1,6 +1,6 @@
 
 .env.php
-.idea/.workspace.xml
+.idea/workspace.xml
 .phpunit.result.cache
 npm-debug.log
 yarn-error.log
