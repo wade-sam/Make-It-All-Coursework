@@ -7,7 +7,6 @@ class HardwareItem extends Component {
         return (
             <div className="container asset">
                 <h3>{title}</h3>
-                <p>Location: {location}</p>
                 <p>Make: {make}</p>
 
                 <span className="serial-no">{serialNo}</span>

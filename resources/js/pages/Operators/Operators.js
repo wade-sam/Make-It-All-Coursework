@@ -14,10 +14,12 @@ class Operators extends Component {
                 <h1> Operators </h1>
                 <OperatorsOverview
                     title="Active Operators"
+                    status="active"
                 />
 
                 <OperatorsOverview
                     title="Inactive Operators"
+                    status="inactive"
                 />
             </div>
         );

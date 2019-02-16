@@ -13,8 +13,8 @@ class Dashboard extends Component {
                 <Profile />
                 <h1>Welcome, Simona</h1>
                 <QueryOverview />
-                <SpecialistsOverview title="Online Specialists" />
-                <SpecialistsOverview title="Offline Specialists" />
+                <SpecialistsOverview title="Online Specialists" status="active" />
+                <SpecialistsOverview title="Offline Specialists" status="inactive" />
             </div>
         );
     }

@@ -10,7 +10,6 @@ class Operator extends Component {
                     </div>
                     <div className="col-md-7">
                         <h4>{this.props.name}</h4>
-                        <span>{this.props.engagement}</span>;
                         <span>{this.props.overdue}</span>
                     </div>
                 </div>

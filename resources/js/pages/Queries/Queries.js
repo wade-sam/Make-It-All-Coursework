@@ -20,7 +20,7 @@ class Queries extends Component {
     componentWillMount() {
         axios.get('/api/query').then(res => {
             this.setState({
-               queries: res.data,
+                queries: res.data,
             });
         }).catch(err => {
             console.log(err);

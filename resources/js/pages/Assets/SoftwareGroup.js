@@ -1,25 +1,49 @@
 import React, {Component} from 'react';
-
 import SoftwareItem from './SoftwareItem';
-
-const itemData = [
-    {
-        title: "John Doe's Laptop",
-        license: "Lorem ipsum license",
-        serialNo: 2455,
-    }
-];
+import axios from "axios";
+import HardwareItem from "./HardwareItem";
 
 class SoftwareGroup extends Component {
+    constructor (props) {
+        super(props);
+
+        this.state =  {
+            softwares: [],
+        }
+    }
+
+    componentWillMount() {
+        axios.get('/api/assets/software').then(res => {
+            this.setState({
+                softwares: res.data,
+            });
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+
     render() {
+        const { softwares } = this.state;
+
         return (
             <div className="container card asset-card">
                 <h1>Software</h1>
-                <SoftwareItem
-                    title={itemData[0].title}
-                    license={itemData[0].license}
-                    serialNo={itemData[0].serialNo}
-                />
+
+                {
+                    softwares ? (
+                        softwares.map(software => {
+                            return (
+                                <SoftwareItem
+                                    title={software.software_name}
+                                    license={software.software_licence}
+                                    key={software.software_licence}
+                                />
+                            )
+                        })
+                    ) : null
+                }
+
+
             </div>
         );
     }
