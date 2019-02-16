@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { Pagination } from 'semantic-ui-react'
 
 import Nav from '../../components/Nav';
 import Profile from '../../components/Profile';
@@ -30,6 +31,15 @@ class Queries extends Component {
         const { queries } = this.state;
         return (
             <div className="page" id="queries">
+                <Pagination
+                    boundaryRange={0}
+                    defaultActivePage={1}
+                    ellipsisItem={null}
+                    firstItem={null}
+                    lastItem={null}
+                    siblingRange={1}
+                    totalPages={10}
+                />
                 <Nav />
                 <Profile />
                 <h1> Queries </h1>
