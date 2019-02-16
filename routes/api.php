@@ -19,4 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('dashboard/queriesOverview','Api\QueryController@queriesOverview');
 Route::get('dashboard/specialistsStatus','Api\QueryController@specialistsStatus');
+Route::get('operators/status','Api\QueryController@operatorStatus');
+Route::get('assets/hardware','Api\QueryController@assetsHardware');
+Route::get('assets/software','Api\QueryController@assetsSoftware');
+Route::get('assets/os','Api\QueryController@assetsOS');
 Route::resource('query','Api\QueryController');
