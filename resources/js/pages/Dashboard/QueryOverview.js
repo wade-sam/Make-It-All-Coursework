@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 
 const queryNum = [
     {
@@ -14,6 +15,7 @@ class QueryOverview extends Component {
             <div className="container card" id="queries-overview">
                 <div className="row">
                     <h2>Queries overview:</h2>
+                    <span id="add-new-btn"><Link to="/query"> Add new + </Link></span>
                 </div>
                 <div className="row query-numbers">
                     <div className="col-sm-4">
