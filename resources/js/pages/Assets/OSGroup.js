@@ -36,6 +36,7 @@ class OSGroup extends Component {
                             return (
                                 <OSItem
                                     title={OS.os_name}
+                                    id={i}
                                     key={i}
                                 />
                             )
