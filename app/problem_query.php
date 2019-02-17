@@ -8,7 +8,7 @@ class problem_query extends Model
 {
 
     protected $primaryKey = 'query_id';
-    protected $fillable = array('operator_name','specialist_name','caller_name','title', 'description', 'notes',
+    protected $fillable = array('operator_name','operator_id','specialist_name','specialist_id','caller_name','title', 'description', 'notes',
         'type','system_name','system_component','software_name','os_name','status','priority','due_date');
 
     //defining the relationships

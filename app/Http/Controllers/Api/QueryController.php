@@ -96,7 +96,10 @@ class QueryController extends Controller
      */
     public function store(Request $request)
     {
-        $query = new problem_query();
+        //$query = problem_query::created($request->all());
+        $query = new \App\problem_query;
+       // $decode = json_decode($request,true);
+        /*
         $query ->title = $request->get('title');
         $query ->description = $request->get('desc');
         $query ->notes = $request->get('notes');
@@ -108,8 +111,27 @@ class QueryController extends Controller
         $query->operator_name = $request->get('operator');
         $query-> specialist_name = $request->get('specialist');
         $query ->caller_name = $request->get('caller');
-        problem_query::created($request->all());
-        return $query;
+
+        */
+        $query->title = $request->input('title');
+        $query->description = $request->input('desc');
+        $query->notes = $request ->input('notes');
+        $query->type = 'Hardware';//$request ->input('type');
+        $query->priority = $request ->input('priority');
+        $query->system_component = $request->input('hardware');
+        $query->system_name = 'PC-01';
+        $query->software_name = $request->input('software');
+        $query->os_name = $request->input('OS');
+        $query->operator_name = $request->input('operator');
+        $query->specialist_name = $request->input('specialist');
+        $query->caller_name = 'sam';
+        $query->due_date = '2019/03/04';
+        //$query->specialist_id = '4';
+        //$query->operator_id = '3';
+        $query->status = 'open';
+        $query->save();
+
+        return 'hello';
     }
 
     /**
