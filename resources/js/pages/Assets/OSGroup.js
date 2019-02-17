@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 
 import OSItem from './OSItem';
 import axios from "axios";
-import SoftwareItem from "./SoftwareItem";
 
 class OSGroup extends Component {
     constructor (props) {

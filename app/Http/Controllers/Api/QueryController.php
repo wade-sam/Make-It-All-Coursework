@@ -118,7 +118,7 @@ class QueryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    //This is used to show the individual query. Will be used in the Query.js file
+    //This is used to show the individual query. Will be used in the ExpandedQuery.js file
     public function show($id)
     {
         /*
