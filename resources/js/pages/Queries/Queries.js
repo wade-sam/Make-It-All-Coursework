@@ -53,10 +53,10 @@ class Queries extends Component {
                                     type={query.type}
                                     title={query.title}
                                     id={query.query_id}
-                                    reporter={`${query.First_Name} ${query.Last_Name}`}
+                                    reporter={query.operator_name}
                                     reportDate={query.created_at}
                                     dueDate={query.due_date}
-                                    specialist={`${query.first_name} ${query.last_name}`}
+                                    specialist={query.specialist_name}
                                     priority={query.priority}
                                     status="status"
                                     key={query.query_id}

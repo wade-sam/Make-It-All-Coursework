@@ -15,13 +15,13 @@ class AddQuery extends Component {
                 {
                     title: "",
                     id: 0,
-                    descr: "",
+                    desc: "",
                     notes: "",
                     type: "",
                     hardware: "",
                     software: "",
                     OS: "",
-                    reporter: "",
+                    caller: "",
                     operator: "",
                     specialist: "",
                     duePeriod: 0,
@@ -128,10 +128,6 @@ class AddQuery extends Component {
         })
     }
 
-    createQuery() {
-        console.log(this.state.queryData);
-    }
-
     handleTitle(event) {
         this.setState({
             queryData: {...this.state.queryData,
@@ -143,7 +139,7 @@ class AddQuery extends Component {
     handleDescr(event) {
         this.setState({
             queryData: {...this.state.queryData,
-                descr: event.target.value
+                desc: event.target.value
             }
         });
     }
@@ -218,6 +214,20 @@ class AddQuery extends Component {
                 duePeriod: event.target.value
             }
         });
+    }
+
+    createQuery() {
+        console.log(this.state.queryData);
+
+        axios.post('/api/query/store', {
+            ...this.state.queryData
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
 
     render() {
