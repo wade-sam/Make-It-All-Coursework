@@ -21,7 +21,7 @@ export default class Index extends Component {
                     <Route exact path="/" component={Assets} />
                     <Route exact path="/analytics" component={Analytics} />
                     <Route exact path="/operators" component={Operators} />
-                    <Route exact path="/add-query" component={AddQuery} />
+                    <Route exact path="/query" component={AddQuery} />
                 </div>
             </BrowserRouter>
         );
