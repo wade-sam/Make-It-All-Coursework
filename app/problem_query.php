@@ -8,7 +8,8 @@ class problem_query extends Model
 {
 
     protected $primaryKey = 'query_id';
-    protected $fillable = array('operator_id','specialist_id','caller_name','title', 'description', 'notes', 'type', 'due_date');
+    protected $fillable = array('operator_name','specialist_name','caller_name','title', 'description', 'notes',
+        'type','system_name','system_component','software_name','os_name','status','priority','due_date');
 
     //defining the relationships
     //Each Query has one Operator
@@ -36,6 +37,10 @@ class problem_query extends Model
     }
 
     public function os_query_relationship(){
-        return $this->hasOne(operating_system::class);
+        return $this->hasOne(operating_system ::class);
+    }
+
+    public function system_query_relationship(){
+        return $this->hasOne(system::class);
     }
 }
