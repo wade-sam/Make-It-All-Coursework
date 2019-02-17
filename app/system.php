@@ -21,4 +21,5 @@ class system extends Model
     public function system_query_relationship(){
         return $this->belongsToMany(problem_query::class);
     }
+
 }

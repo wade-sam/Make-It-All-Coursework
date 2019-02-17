@@ -26,3 +26,10 @@ Route::get('assets/hardware','Api\QueryController@assetsHardware');
 Route::get('assets/software','Api\QueryController@assetsSoftware');
 Route::get('assets/os','Api\QueryController@assetsOS');
 Route::resource('query','Api\QueryController');
+
+Route::get('display/operator','Api\QueryController@showOperatorsQuery');
+Route::get('display/specialist','Api\QueryController@showSpecialistsQuery');
+Route::get('query/create/system','Api\QueryController@showSystemQuery');
+Route::get('query/create/equipment/{equipment}','Api\QueryController@showEquipmentQuery');
+Route::get('query/create/os/{os}','Api\QueryController@showOSQuery');
+Route::get('query/create/software/{os}','Api\QueryController@showSoftware');
