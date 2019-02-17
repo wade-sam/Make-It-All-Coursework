@@ -53,7 +53,7 @@ nav {
   }
   ul li {
     list-style-type: none;
-    margin-bottom: 35px;
+    margin-bottom: 60px;
   }
   ul li a{
     color: #fff;
@@ -125,6 +125,10 @@ nav {
     span {
       margin-right: 10px;
     }
+
+    .specialist {
+      border-top: 1px solid $blue;
+    }
   }
 }
 
@@ -152,6 +156,66 @@ nav {
     }
   }
 }
+
+//Add Query
+#add-query{
+  .row {
+    margin-left: 20px;
+  }
+  input, .selection, textarea {
+    margin-top: 20px;
+    margin-right: 20px;
+    box-shadow: $light-shadow;
+  }
+  textarea {
+    resize: none;
+  }
+  .bottom-section {
+    margin-left: 0;
+    margin-top: 50px;
+    width: 65%;
+
+    hr {
+      width: 70%;
+    }
+  }
+
+  .right-section {
+    position: absolute;
+    right: 15%;
+    top: 38%;
+
+    .selection {
+      border-radius: 15px;
+      border: none;
+      background-color: $blue;
+      color: white;
+      box-shadow: $lighter-shadow;
+
+      .text {
+        color: white;
+      }
+    }
+
+    .dropdown .item {
+      background-color: $blue;
+    }
+  }
+
+  #create-query-btn {
+    padding: 10px;
+    background-color: $darker-blue;
+    color: white;
+    cursor: pointer;
+    border: none;
+    margin-left: 71%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
 
 // Assets
 #assets {

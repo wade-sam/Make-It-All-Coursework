@@ -1,16 +1,6 @@
 import React, {Component} from 'react';
 import HardwareItem from './HardwareItem';
 import axios from "axios";
-import Query from "../Queries/Query";
-
-const itemData = [
-    {
-        title: "John Doe's Laptop",
-        location: "Lorem ipsum loc",
-        make: "Lorem ipsum make",
-        serialNo: 245,
-    }
-];
 
 class HardwareGroup extends Component {
     constructor (props) {
