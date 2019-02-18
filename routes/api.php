@@ -44,3 +44,4 @@ Route::get('query/display/os/{os}','Api\QueryController@showOSQuery');
 Route::get('query/display/software/{software}','Api\QueryController@showSoftware');
 
 Route::get('login','Api\QueryController@login');
+Route::get('delete/{delete}','Api\QueryController@destroy');
