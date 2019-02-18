@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 class Query extends Component {
     render() {
-        const {hardware, type, title, id, reporter, reportDate, dueDate, specialist, priority, status} = this.props;
+        const {hardware, type, title, id, reporter, reportDate, dueDate, specialist, priority, status, deleteQuery} = this.props;
 
         return (
             <Link to={`/queries/${id}`}>
@@ -11,6 +11,7 @@ class Query extends Component {
                     <div className="row">
                         <span className="key-tag">{hardware}</span>
                         <span className="key-tag">{type}</span>
+                        <span className="delete-query" onClick={deleteQuery}><i className="fas fa-trash bin-icon" /></span>
                     </div>
                     <div className="row">
                         <h2>{title} #{id}</h2>

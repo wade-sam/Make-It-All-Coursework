@@ -26,6 +26,18 @@ class Queries extends Component {
         })
     }
 
+    deleteQuery (id, e) {
+        e.preventDefault();
+
+        alert(`Are you sure you want to delete query ${id}`);
+
+        const newQueries = [...this.state.queries];
+        newQueries.splice((id - 1), 1);
+        this.setState({
+            queries: newQueries,
+        });
+    }
+
     render() {
         const { queries } = this.state;
         return (
@@ -50,6 +62,7 @@ class Queries extends Component {
                                     priority={query.priority}
                                     status="status"
                                     key={query.query_id}
+                                    deleteQuery={(e) => this.deleteQuery(query.query_id, e)}
                                 />
                             )
                         })
