@@ -167,6 +167,7 @@ class QueryController extends Controller
         return response()->json($software);
     }
 
+    //fetching all the login information for the front end. links with the login page
     public function login(){
         $login = DB::table('personel')
             ->select('personel.name','personel.type','personel.username','personel.password')
@@ -175,6 +176,14 @@ class QueryController extends Controller
 
 
     }
+/*
+    public function queriesPerDay(){
+        $query = DB::table('problem_queries')
+            ->select('problem_queries.query_id',date_sub('problem_queries.created_at','-',' 1 DAY'))
+            ->where('problem_queries.created_at','>' 'problem_queries.created_at')
+
+    }
+*/
 
     public function edit($id)
     {
@@ -222,14 +231,10 @@ class QueryController extends Controller
 
 
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+//Deleting a record
     public function destroy($id)
     {
-
+        $delete = problem_query::where('query_id',$id)->delete();
+        return response()->json('Succesfull');
     }
 }
