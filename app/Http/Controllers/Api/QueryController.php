@@ -168,28 +168,6 @@ class QueryController extends Controller
     }
 
     public function login(){
-        /*
-        $rules = array(
-            'username' =>'required',
-            'password'=>'required'
-        );
-
-        $validator = Validator::make(Input::all(),$rules);
-
-        if ($validator->fails()){
-            return response('Login Faild, please try again')
-                ->withErrors($validator)
-                ->withInput(Input::except('password'));
-        }else{
-            $userdata = array(
-                'username' => Input::get('username')
-
-            );
-
-            if (Auth::attempt($userdata))
-        }
-        */
-
         $login = DB::table('personel')
             ->select('personel.name','personel.type','personel.username','personel.password')
             ->get();
