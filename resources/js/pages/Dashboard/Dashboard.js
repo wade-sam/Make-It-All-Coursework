@@ -12,7 +12,7 @@ class Dashboard extends Component {
                 {/*Render the nav and profile components*/}
                 <Nav />
                 <Profile />
-                <h1>Welcome, Simona</h1>
+                <h1>Welcome</h1>
                 {/*Render the query overview component*/}
                 <QueryOverview />
                 {/*Render the specialist overview component twice for active and inactive specialists*/}
