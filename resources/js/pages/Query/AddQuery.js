@@ -243,6 +243,7 @@ class AddQuery extends Component {
                 </div>
                 <div className="row">
                     <Dropdown placeholder='Type' selection options={types} onChange={(e) => this.handleTypes(e)} />
+                    <Dropdown placeholder='System' selection options={hardwares} onChange={(e) => this.handleHardware(e)} />
                     <Dropdown placeholder='Affected Hardware' selection options={hardwares} onChange={(e) => this.handleHardware(e)} />
                 </div>
                 <div className="row">
