@@ -17,12 +17,28 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('query/store', 'Api\QueryController@store');
+//Routes for the backend
+Route::post('query/store', 'Api\QueryController@store');//modifying the store route
 
+//routes for the dashboard
 Route::get('dashboard/queriesOverview','Api\QueryController@queriesOverview');
 Route::get('dashboard/specialistsStatus','Api\QueryController@specialistsStatus');
+
+//routes for the operator page
 Route::get('operators/status','Api\QueryController@operatorStatus');
+
+//routes for the assets page
 Route::get('assets/hardware','Api\QueryController@assetsHardware');
 Route::get('assets/software','Api\QueryController@assetsSoftware');
 Route::get('assets/os','Api\QueryController@assetsOS');
+
+//creating all the CRUD routes in the QueryController
 Route::resource('query','Api\QueryController');
+
+//Routes for hte create/edit query page
+Route::get('display/operator','Api\QueryController@showOperatorsQuery');
+Route::get('display/specialist','Api\QueryController@showSpecialistsQuery');
+Route::get('query/create/system','Api\QueryController@showSystemQuery');
+Route::get('query/display/equipment/{equipment}','Api\QueryController@showEquipmentQuery');
+Route::get('query/display/os/{os}','Api\QueryController@showOSQuery');
+Route::get('query/display/software/{software}','Api\QueryController@showSoftware');
