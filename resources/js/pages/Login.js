@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Button, Checkbox, Form } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Logo from '../../images/logo.png';
 
 
@@ -12,11 +12,48 @@ export default class Login extends Component {
         this.state =  {
             username: '',
             pass: '',
+            usernames: [],
+            passwords: [],
+            authorisedPass: true,
+            authorisedUser: false,
         }
     }
 
     onSubmit () {
-        //console.log(this.state);
+        axios.get('/api/login').then(res => {
+            // Store usernames and passwords in constants
+            res.data.map(user => {
+                this.setState({
+                    usernames: [...this.state.usernames, user.username],
+                    passwords: [...this.state.passwords, user.password],
+                })
+            });
+
+            // Call the login function
+            this.login();
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+
+    login() {
+        // Map through all the usernames and check whether the current username is there
+        this.state.usernames.map(username => {
+            if (this.state.username === username) {
+                this.setState({
+                    authorisedUser: true,
+                });
+            }
+        });
+
+        // Map through all the passwords and check whether the current password is there
+        this.state.passwords.map(password => {
+            if (this.state.password === password) {
+                this.setState({
+                    authorisedPass: true,
+                });
+            }
+        });
     }
 
     // Save the username in state as the user is typing
@@ -30,7 +67,8 @@ export default class Login extends Component {
     }
 
     render() {
-        const {username, pass} = this.state;
+        const {username, pass, authorisedPass, authorisedUser} = this.state;
+
         return (
             <div className="container-fluid" id="login">
                 <div className="container">
@@ -46,10 +84,16 @@ export default class Login extends Component {
                         <Form.Field>
                             <input type="password" placeholder='Password' value={pass} onChange={(e) => this.handlePass(e)} />
                         </Form.Field>
+
+                        {
+                            // If the username and password are correct, login and redirect to dashboard
+                            authorisedPass && authorisedUser ? (
+                                <Redirect to="/dashboard"/>
+                            ) : null
+                        }
+
                         <Button type='submit'>
-                            {/*<Link to="/dashboard">*/}
                             Log In
-                            {/*</Link>*/}
                         </Button>
                     </Form>
                 </div>
