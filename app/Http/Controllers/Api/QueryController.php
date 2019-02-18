@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use Carbon\Carbon;
+use Dotenv\Validator;
 use function GuzzleHttp\Psr7\get_message_body_summary;
 use Illuminate\Support\Facades\DB;
 use App\problem_query;
@@ -10,6 +11,7 @@ use App\system;
 use function GuzzleHttp\Promise\all;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
 
 class QueryController extends Controller
 {
@@ -92,16 +94,16 @@ class QueryController extends Controller
         $query->title = $request->input('title');
         $query->description = $request->input('desc');
         $query->notes = $request ->input('notes');
-        $query->type = 'Hardware';//$request ->input('type');
+        $query->type = //$request ->input('type');
         $query->priority = $request ->input('priority');
         $query->system_component = $request->input('hardware');
-        $query->system_name = 'PC-01';
+        $query->system_name = $request ->input('system');
         $query->software_name = $request->input('software');
         $query->os_name = $request->input('OS');
         $query->operator_name = $request->input('operator');
         $query->specialist_name = $request->input('specialist');
-        $query->caller_name = 'sam';
-        $query->due_date = '2019/03/04';
+        $query->caller_name = $request->input('caller');
+        $query->due_date = $request->input('due');
         $query->status = 'open';
         $query->save();
 
@@ -165,6 +167,37 @@ class QueryController extends Controller
         return response()->json($software);
     }
 
+    public function login(){
+        /*
+        $rules = array(
+            'username' =>'required',
+            'password'=>'required'
+        );
+
+        $validator = Validator::make(Input::all(),$rules);
+
+        if ($validator->fails()){
+            return response('Login Faild, please try again')
+                ->withErrors($validator)
+                ->withInput(Input::except('password'));
+        }else{
+            $userdata = array(
+                'username' => Input::get('username')
+
+            );
+
+            if (Auth::attempt($userdata))
+        }
+        */
+
+        $login = DB::table('personel')
+            ->select('personel.name','personel.type','personel.username','personel.password')
+            ->get();
+            return response()->json($login);
+
+
+    }
+
     public function edit($id)
     {
     }
@@ -209,6 +242,8 @@ class QueryController extends Controller
     }
 */
 
+
+
     /**
      * Remove the specified resource from storage.
      *
@@ -217,6 +252,6 @@ class QueryController extends Controller
      */
     public function destroy($id)
     {
-        //
+
     }
 }

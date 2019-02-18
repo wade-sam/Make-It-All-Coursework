@@ -42,3 +42,5 @@ Route::get('query/create/system','Api\QueryController@showSystemQuery');
 Route::get('query/display/equipment/{equipment}','Api\QueryController@showEquipmentQuery');
 Route::get('query/display/os/{os}','Api\QueryController@showOSQuery');
 Route::get('query/display/software/{software}','Api\QueryController@showSoftware');
+
+Route::get('login','Api\QueryController@login');
