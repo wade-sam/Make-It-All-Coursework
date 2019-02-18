@@ -3,6 +3,8 @@ import { Container} from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 
 class Profile extends Component {
+    // Profile component which is later rendered on every page
+
     render() {
         return (
             <Container id="profile">

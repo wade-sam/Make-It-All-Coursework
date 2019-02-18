@@ -19,10 +19,12 @@ export default class Login extends Component {
         //console.log(this.state);
     }
 
+    // Save the username in state as the user is typing
     handleUsername (event) {
         this.setState({username: event.target.value});
     }
 
+    // Save the password in state as the user is typing
     handlePass (event) {
         this.setState({pass: event.target.value});
     }
@@ -44,9 +46,6 @@ export default class Login extends Component {
                         <Form.Field>
                             <input type="password" placeholder='Password' value={pass} onChange={(e) => this.handlePass(e)} />
                         </Form.Field>
-                        {/*<Form.Field>*/}
-                            {/*<Checkbox label='Remember me' />*/}
-                        {/*</Form.Field>*/}
                         <Button type='submit'>
                             {/*<Link to="/dashboard">*/}
                             Log In

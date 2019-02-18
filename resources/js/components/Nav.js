@@ -6,6 +6,7 @@ class Nav extends Component {
     render() {
         return (
             <Container>
+                {/*Nav component, which is later rendered on every page*/}
                 <nav>
                     <ul>
                         <li>

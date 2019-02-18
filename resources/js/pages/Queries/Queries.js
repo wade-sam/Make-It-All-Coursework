@@ -17,7 +17,9 @@ class Queries extends Component {
     }
 
     componentWillMount() {
+        // Get queries list from the API
         axios.get('/api/query').then(res => {
+            // Store the queries in state
             this.setState({
                 queries: res.data,
             });
@@ -26,13 +28,20 @@ class Queries extends Component {
         })
     }
 
+    // Delete query on bin icon press
     deleteQuery (id, e) {
         e.preventDefault();
 
         alert(`Are you sure you want to delete query ${id}`);
+        console.log(id -1);
 
+        axios.delete(`/api/query/${this.state.queries[id-1]}`);
+
+        // Create a copy of current queries array
         const newQueries = [...this.state.queries];
+        // Splice the one you want to delete
         newQueries.splice((id - 1), 1);
+        // Set the state to the new queries array
         this.setState({
             queries: newQueries,
         });
@@ -48,7 +57,8 @@ class Queries extends Component {
                 <span><Link to="/query"> Add new + </Link></span>
                 {
                     queries ? (
-                        queries.map(query => {
+                        // Map through all the queries to render each one of them in the Query component and pass it's properties:
+                        queries.reverse().map(query => {
                             return (
                                 <Query
                                     hardware={query.system_name}

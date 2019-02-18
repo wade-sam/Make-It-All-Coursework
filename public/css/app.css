@@ -10726,7 +10726,6 @@ nav ul li a {
 }
 
 #assets .asset-card {
-  width: 25%;
   display: inline-block;
   margin-right: 25px;
 }
@@ -10756,5 +10755,9 @@ nav ul li a {
   width: 25%;
   display: inline-block;
   margin-right: 20px;
+}
+
+.operators-overview .operator .row {
+  border-top: 1px solid #6F99EC;
 }
 

@@ -29,10 +29,11 @@ class AddQuery extends Component {
     }
 
     componentWillMount() {
-        // Get Hardware Items from API
+        // Get individual query's data from API
         axios.get(`/api/query/${this.state.currentId}`).then(res => {
             console.log(res.data)
 
+            // Save the API response in state to later display it on the front-end
             this.setState({
                 title: res.data.title,
                 type: res.data.type,

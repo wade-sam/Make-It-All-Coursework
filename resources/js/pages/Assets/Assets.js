@@ -13,9 +13,12 @@ class Assets extends Component {
                 <Nav />
                 <Profile />
                 <h1> Assets </h1>
-                <HardwareGroup />
-                <SoftwareGroup />
-                <OSGroup />
+                {/*Generating hardware, software and OS items in different components*/}
+                <div className="row">
+                    <div className="col-md-4"><HardwareGroup /></div>
+                    <div className="col-md-4"><SoftwareGroup /></div>
+                    <div className="col-md-4"><OSGroup /></div>
+                </div>
             </div>
         );
     }

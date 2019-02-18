@@ -13,4 +13,5 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+// Starting point is index.js
 require('./Index');

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 class Query extends Component {
     render() {
+        // Receiving props from Queries.js
         const {hardware, type, title, id, reporter, reportDate, dueDate, specialist, priority, status, deleteQuery} = this.props;
 
         return (

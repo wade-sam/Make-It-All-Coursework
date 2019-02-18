@@ -14,10 +14,13 @@ class OperatorsOverview extends Component {
     }
 
     componentWillMount() {
+        // Getting the operators list from the API
         axios.get('/api/operators/status').then(res => {
-            const activeOperators = res.data.filter(operator => operator.operator_status === 'Active');
-            const inactiveOperators = res.data.filter(operator => operator.operator_status === 'Inactive');
+            // Filtering based on status, i.e active and inactive and storing both lists in constants
+            const activeOperators = res.data.filter(operator => operator.personel_status === 'Active');
+            const inactiveOperators = res.data.filter(operator => operator.personel_status === 'Inactive');
 
+            // Saving those constants in state
             this.setState({
                 activeOperators: activeOperators,
                 inactiveOperators: inactiveOperators
@@ -39,21 +42,23 @@ class OperatorsOverview extends Component {
                 </div>
                 <div className="row">
                     {
+                        // Mapping through all the ACTIVE operators and displaying them through the Operator component
                         status === 'active' ? (
                             activeOperators.map((operator, i) => {
                                 return (
                                     <Operator
-                                        name={`${operator.first_name} ${operator.last_name}`}
+                                        name={operator.name}
                                         photo="https://cdn1.iconfinder.com/data/icons/freeline/32/account_friend_human_man_member_person_profile_user_users-512.png"
                                         key={i}
                                     />
                                 )
                             })
                         ) : (
+                            // Mapping through all the INACTIVE operators and displaying them through the Operator component
                             inactiveOperators.map((operator, i) => {
                                 return (
                                     <Operator
-                                        name={`${operator.first_name} ${operator.last_name}`}
+                                        name={operator.name}
                                         photo="https://cdn1.iconfinder.com/data/icons/freeline/32/account_friend_human_man_member_person_profile_user_users-512.png"
                                         key={i}
                                     />

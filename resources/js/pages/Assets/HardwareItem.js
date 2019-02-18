@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 
 class HardwareItem extends Component {
     render() {
-        const {title, location, make, serialNo} = this.props;
+        // Getting the props from HardwareGroup.js
+        const {title, make, serialNo} = this.props;
         
         return (
             <div className="container asset">

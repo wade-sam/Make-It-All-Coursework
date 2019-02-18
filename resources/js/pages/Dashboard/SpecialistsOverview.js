@@ -14,10 +14,13 @@ class SpecialistsOverview extends Component {
     }
 
     componentWillMount() {
+        // Axios get request to get the specialists list from the API
         axios.get('/api/dashboard/specialistsStatus').then(res => {
-            const activeSpecialists = res.data.filter(specialist => specialist.specialist_status === 'Active');
-            const inactiveSpecialists = res.data.filter(specialist => specialist.specialist_status === 'Inactive');
+            // Filter them based on status, i.e active and inactive and store results in constants
+            const activeSpecialists = res.data.filter(specialist => specialist.personel_status === 'Active');
+            const inactiveSpecialists = res.data.filter(specialist => specialist.personel_status === 'Inactive');
 
+            // Save those constants in state
             this.setState({
                 activeSpecialists: activeSpecialists,
                 inactiveSpecialists: inactiveSpecialists
@@ -39,26 +42,24 @@ class SpecialistsOverview extends Component {
                 </div>
                 <div className="row">
                     {
+                        // Render only the active operators:
                         status === 'active' ? (
                             activeSpecialists.map((specialist, i) => {
                                 return (
                                     <Specialist
-                                        name={`${specialist.first_name} ${specialist.last_name}`}
+                                        name={specialist.name}
                                         photo="https://cdn1.iconfinder.com/data/icons/freeline/32/account_friend_human_man_member_person_profile_user_users-512.png"
-                                        wip='wip'
-                                        overdue='odue'
                                         key={i}
                                     />
                                 )
                             })
                         ) : (
+                            // Render only the inactive operators:
                             inactiveSpecialists.map((specialist, i) => {
                                 return (
                                     <Specialist
-                                        name={`${specialist.first_name} ${specialist.last_name}`}
+                                        name={specialist.name}
                                         photo="https://cdn1.iconfinder.com/data/icons/freeline/32/account_friend_human_man_member_person_profile_user_users-512.png"
-                                        wip='wip'
-                                        overdue='odue'
                                         key={i}
                                     />
                                 )

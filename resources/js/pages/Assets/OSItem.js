@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 class OSItem extends Component {
     render() {
+        // Getting the props from OSroup.js
         const {title, id} = this.props;
 
         return (

@@ -13,6 +13,7 @@ class SoftwareGroup extends Component {
     }
 
     componentWillMount() {
+        // Geting the list of software assets from the API and storing them in state
         axios.get('/api/assets/software').then(res => {
             this.setState({
                 softwares: res.data,
@@ -30,6 +31,7 @@ class SoftwareGroup extends Component {
                 <h1>Software</h1>
 
                 {
+                    // Map through software assets list and render each one of them in the SoftwareItem component
                     softwares ? (
                         softwares.map(software => {
                             return (

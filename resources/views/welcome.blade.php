@@ -18,6 +18,7 @@
 
     </head>
     <body>
+        {{--The whole application is rendered into this wrapping div:--}}
         <div id="App"></div>
 
         <script src="js/app.js"></script>

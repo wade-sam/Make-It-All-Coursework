@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Input, Dropdown, Form, TextArea } from 'semantic-ui-react'
+import { Link } from 'react-router-dom';
 
 import Nav from '../../components/Nav';
 import Profile from '../../components/Profile';
@@ -99,12 +100,12 @@ class AddQuery extends Component {
 
         // Get Operators from API and use only the active ones
         axios.get('/api/operators/status').then(res => {
-            const activeOperators = res.data.filter(operator => operator.operator_status === 'Active');
+            const activeOperators = res.data.filter(operator => operator.personel_status === 'Active');
 
             activeOperators.map((operator, i) => {
                 this.setState({
                     operators: [...this.state.operators,
-                        {key: i, text: `${operator.first_name} ${operator.last_name}`, value: `${operator.first_name} ${operator.last_name}`}
+                        {key: i, text: operator.name, value: operator.name}
                     ]
                 });
             });
@@ -114,12 +115,12 @@ class AddQuery extends Component {
 
         // Get Specialists from API and use only the active ones
         axios.get('/api/dashboard/specialistsStatus').then(res => {
-            const activeSpecialists = res.data.filter(specialist => specialist.specialist_status === 'Active');
+            const activeSpecialists = res.data.filter(specialist => specialist.personel_status === 'Active');
 
             activeSpecialists.map((specialist, i) => {
                 this.setState({
                     specialists: [...this.state.specialists,
-                        {key: i, text: `${specialist.first_name} ${specialist.last_name}`, value: `${specialist.first_name} ${specialist.last_name}`}
+                        {key: i, text: specialist.name, value: specialist.name}
                     ]
                 });
             });
@@ -127,6 +128,8 @@ class AddQuery extends Component {
             console.log(err);
         })
     }
+
+    // Handle all the inputs and save them in state as the user is typing:
 
     handleTitle(event) {
         this.setState({
@@ -217,13 +220,12 @@ class AddQuery extends Component {
     }
 
     createQuery() {
-        console.log(this.state.queryData);
-
+        // Post request to add the new created query in the API
         axios.post('/api/query/store', {
             ...this.state.queryData
         })
             .then(function (response) {
-                console.log(response);
+                alert("Your query has been created successfully");
             })
             .catch(function (error) {
                 console.log(error);
@@ -284,7 +286,9 @@ class AddQuery extends Component {
                 </div>
 
                 <div className="row">
-                    <input type="button" id="create-query-btn" value="Create Query" onClick={() => this.createQuery()} />
+                    <Link to={"/queries"}>
+                        <input type="button" id="create-query-btn" value="Create Query" onClick={() => this.createQuery()} />
+                    </Link>
                 </div>
             </div>
         );

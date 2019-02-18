@@ -13,6 +13,7 @@ class OSGroup extends Component {
     }
 
     componentWillMount() {
+        // Geting the list of OS assets from the API and storing them in state
         axios.get('/api/assets/os').then(res => {
             this.setState({
                 OSs: res.data,
@@ -30,6 +31,7 @@ class OSGroup extends Component {
                 <h1>OS</h1>
 
                 {
+                    // Map through OS assets list and render each one of them in the OStem component
                     OSs ? (
                         OSs.map((OS, i) => {
                             return (

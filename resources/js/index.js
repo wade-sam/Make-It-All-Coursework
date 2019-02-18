@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route} from "react-router-dom";
 import axios from "axios";
 
-
 import Login from './pages/Login';
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Queries from "./pages/Queries/Queries";
@@ -13,6 +12,7 @@ import Operators from "./pages/Operators/Operators";
 import AddQuery from "./pages/Query/AddQuery";
 import ExpandedQuery from "./pages/Query/ExpandedQuery";
 
+// Starting point of the application with all the front-end routes
 export default class Index extends Component {
     constructor (props) {
         super(props);
@@ -22,10 +22,13 @@ export default class Index extends Component {
         }
     }
 
+    // Axios get request to get the queries list from the API
     componentWillMount() {
         axios.get('/api/query').then(res => {
+            // Loop through all the queries to store all the IDs
             const ids = res.data.map(query => query.query_id);
 
+            // Save all the IDs in state
             this.setState({
                 queries_id: ids
             });
@@ -38,6 +41,7 @@ export default class Index extends Component {
         const { queries_id } = this.state;
         return (
             <BrowserRouter>
+                {/*All the routes:*/}
                 <div className="main-app">
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/dashboard" component={Dashboard} />
@@ -48,6 +52,7 @@ export default class Index extends Component {
                     <Route exact path="/query" component={AddQuery} />
 
                     {
+                        // Generate a route for each individual query:
                         queries_id.map((id, i) => {
                             return (
                                 <Route exact path={`/queries/${id}`} component={ExpandedQuery} key={i}/>

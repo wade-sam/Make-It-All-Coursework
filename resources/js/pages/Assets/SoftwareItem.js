@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 class SoftwareItem extends Component {
     render() {
+        // Getting the props from SoftwareGroup.js
         const {title, license } = this.props;
 
         return (

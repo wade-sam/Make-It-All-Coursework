@@ -12,6 +12,7 @@ class HardwareGroup extends Component {
     }
 
     componentWillMount() {
+        // Geting the list of hardware assets from the API and storing them in state
         axios.get('/api/assets/hardware').then(res => {
             this.setState({
                 hardwares: res.data,
@@ -29,6 +30,7 @@ class HardwareGroup extends Component {
                 <h1>Hardware</h1>
 
                 {
+                    // Map through hardware assets list and render each one of them in the HardwareItem component
                     hardwares ? (
                         hardwares.map(hardware => {
                             return (

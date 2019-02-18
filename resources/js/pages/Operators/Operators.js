@@ -12,6 +12,7 @@ class Operators extends Component {
                 <Nav />
                 <Profile />
                 <h1> Operators </h1>
+                {/*Rendering the OperatorsOverview component twice for active and inactive operators respectivelly*/}
                 <OperatorsOverview
                     title="Active Operators"
                     status="active"
