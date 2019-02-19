@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'App\\Caller' => $baseDir . '/app/Caller.php',
+    'App\\Caller' => $baseDir . '/app/caller.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Api\\QueryController' => $baseDir . '/app/Http/Controllers/Api/QueryController.php',
@@ -31,15 +31,11 @@ return array(
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\User' => $baseDir . '/app/User.php',
     'App\\equipment' => $baseDir . '/app/equipment.php',
+    'App\\message' => $baseDir . '/app/message.php',
     'App\\operating_system' => $baseDir . '/app/operating_system.php',
-    'App\\operator' => $baseDir . '/app/operator.php',
-    'App\\problem_caller' => $baseDir . '/app/problem_caller.php',
-    'App\\problem_operator' => $baseDir . '/app/problem_operator.php',
+    'App\\personel' => $baseDir . '/app/personel.php',
     'App\\problem_query' => $baseDir . '/app/problem_query.php',
-    'App\\problem_specialist' => $baseDir . '/app/problem_specialist.php',
     'App\\software_details' => $baseDir . '/app/software_details.php',
-    'App\\software_os' => $baseDir . '/app/software_os.php',
-    'App\\specialists' => $baseDir . '/app/specialists.php',
     'App\\system' => $baseDir . '/app/system.php',
     'App\\workstation' => $baseDir . '/app/workstation.php',
     'BeyondCode\\DumpServer\\DumpServerCommand' => $vendorDir . '/beyondcode/laravel-dump-server/src/DumpServerCommand.php',

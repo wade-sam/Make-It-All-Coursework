@@ -420,7 +420,7 @@ class ComposerStaticInit3e6dd2b28a8ea0f0d51bdb13c22491ff
     );
 
     public static $classMap = array (
-        'App\\Caller' => __DIR__ . '/../..' . '/app/Caller.php',
+        'App\\Caller' => __DIR__ . '/../..' . '/app/caller.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Api\\QueryController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/QueryController.php',
@@ -445,15 +445,11 @@ class ComposerStaticInit3e6dd2b28a8ea0f0d51bdb13c22491ff
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\equipment' => __DIR__ . '/../..' . '/app/equipment.php',
+        'App\\message' => __DIR__ . '/../..' . '/app/message.php',
         'App\\operating_system' => __DIR__ . '/../..' . '/app/operating_system.php',
-        'App\\operator' => __DIR__ . '/../..' . '/app/operator.php',
-        'App\\problem_caller' => __DIR__ . '/../..' . '/app/problem_caller.php',
-        'App\\problem_operator' => __DIR__ . '/../..' . '/app/problem_operator.php',
+        'App\\personel' => __DIR__ . '/../..' . '/app/personel.php',
         'App\\problem_query' => __DIR__ . '/../..' . '/app/problem_query.php',
-        'App\\problem_specialist' => __DIR__ . '/../..' . '/app/problem_specialist.php',
         'App\\software_details' => __DIR__ . '/../..' . '/app/software_details.php',
-        'App\\software_os' => __DIR__ . '/../..' . '/app/software_os.php',
-        'App\\specialists' => __DIR__ . '/../..' . '/app/specialists.php',
         'App\\system' => __DIR__ . '/../..' . '/app/system.php',
         'App\\workstation' => __DIR__ . '/../..' . '/app/workstation.php',
         'BeyondCode\\DumpServer\\DumpServerCommand' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerCommand.php',
