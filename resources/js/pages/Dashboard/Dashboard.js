@@ -4,15 +4,45 @@ import Nav from '../../components/Nav';
 import Profile from '../../components/Profile';
 import QueryOverview from './QueryOverview';
 import SpecialistsOverview from './SpecialistsOverview';
+import axios from "axios";
 
 class Dashboard extends Component {
+    constructor (props) {
+        super(props);
+
+        this.state =  {
+            userData: [{
+                name: '',
+                type: '',
+                username: '',
+                password: '',
+            }],
+        }
+    }
+
+    componentWillMount() {
+        axios.get('/api/login').then(res => {
+            this.setState({
+                userData: res.data.filter(user => {
+                    return user.username === this.props.location.state.username;
+                })
+            });
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+
     render() {
+        const { userData } = this.state;
+        let initials = userData[0].name.match(/\b\w/g) || [];
+        initials = ((initials.shift() || '') + (initials.pop() || '')).toUpperCase();
+
         return (
             <div className="page" id="dashboard">
                 {/*Render the nav and profile components*/}
                 <Nav />
-                <Profile />
-                <h1>Welcome</h1>
+                <Profile initials={initials} />
+                <h1>Welcome, {userData[0].name}</h1>
                 {/*Render the query overview component*/}
                 <QueryOverview />
                 {/*Render the specialist overview component twice for active and inactive specialists*/}

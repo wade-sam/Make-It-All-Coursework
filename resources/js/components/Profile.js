@@ -13,8 +13,8 @@ class Profile extends Component {
                         <img width="60px" src="https://cdn1.iconfinder.com/data/icons/freeline/32/account_friend_human_man_member_person_profile_user_users-512.png" alt="profile-pic"/>
                     </div>
                     <div className="col-sm-7">
-                        <h1>User</h1>
-                        <Link to="/login">Log out</Link>
+                        <h1>{this.props.initials}</h1>
+                        <Link to="/">Log out</Link>
                     </div>
                 </div>
             </Container>

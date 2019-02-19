@@ -88,7 +88,13 @@ export default class Login extends Component {
                         {
                             // If the username and password are correct, login and redirect to dashboard
                             authorisedPass && authorisedUser ? (
-                                <Redirect to="/dashboard"/>
+                                <Redirect
+                                    // to="/dashboard"
+                                    to={{
+                                        pathname: '/dashboard',
+                                        state: { username: this.state.username}
+                                    }}
+                                />
                             ) : null
                         }
 
