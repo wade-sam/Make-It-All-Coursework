@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 
+
 class QueryController extends Controller
 {
     //This is used to list all the queries on the Queries page
@@ -218,6 +219,7 @@ class QueryController extends Controller
     //links them to the columns in the problem_Query and updates them.
     public function update(Request $request, $id)
     {
+        /*(
         $this->validate(request(),[
            'title'=> 'required',
             'desc'=>'required',
@@ -225,6 +227,8 @@ class QueryController extends Controller
             'type'=>'required',
             'priority'=>'required',
             'hardware'=>'required',
+            'software'=>'required',
+            'OS'=>'required',
             'operator'=>'required',
             'specialist'=>'required',
             'due'=>'required',
@@ -233,19 +237,23 @@ class QueryController extends Controller
             'priority'=>'required',
             'status'=>'required'
         ]);
-        $update_query = \App\problem_query::find($id);
-        $update_query->title = $request->title;
-        $update_query->description = $request->desc;
-        $update_query->notes = $request->notes;
-        $update_query->type = $request->type;
-        $update_query->priority = $request->priority;
-        $update_query->system_component = $request->hardware;
-        $update_query->operator_name = $request->operator;
-        $update_query->specialist_name = $request->specialist;
-        $update_query->due_date = $request->due;
-        $update_query->caller_name = $request->caller;
-        $update_query->system_name = $request->system;
-        $update_query->updated_at = Carbon\Carbon::now();
+        */
+        $update_query = \App\problem_query::find('5');
+        $update_query->title = $request->input('title');
+        $update_query->description = $request->input('desc');
+        $update_query->notes = $request->input('notes');
+        $update_query->type = $request->input('type');
+        $update_query->priority = $request->input('priority');
+        $update_query->system_component = $request->input('hardware');
+        $update_query->software_name = $request->input('software');
+        $update_query->os_name = $request->input('OS');
+        $update_query->operator_name = $request->input('operator_name');
+        $update_query->specialist_name = $request->input('specialist');
+        $update_query->status = $request->input('status');
+        $update_query->due_date = $request->input('due');
+        $update_query->caller_name = $request->input('caller');
+        $update_query->system_name = $request->input('system');
+       // $update_query->updated_at = Carbon\Carbon::now();
         $update_query->save();
         return ('success');
     }
