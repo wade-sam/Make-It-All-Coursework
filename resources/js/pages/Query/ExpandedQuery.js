@@ -175,7 +175,7 @@ class AddQuery extends Component {
             disabled: true,
         });
 
-        axios.post('/api/query/update', {
+        axios.put('/api/query/update', {
             updatedQuery
         })
             .then(function (response) {
