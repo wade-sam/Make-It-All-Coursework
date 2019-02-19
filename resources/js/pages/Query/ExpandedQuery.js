@@ -45,6 +45,7 @@ class AddQuery extends Component {
             OSs: [],
             operators: [],
             specialists: [],
+            queryData: {},
         }
     }
 
@@ -155,11 +156,34 @@ class AddQuery extends Component {
     }
 
     saveQuery() {
-        this.setState({
-            disabled: true
-        })
+        const updatedQuery = {
+            title: this.state.title,
+            id: this.state.currentId,
+            desc: this.state.desc,
+            notes: this.state.notes,
+            type: this.state.type,
+            hardware: this.state.hardware,
+            software: this.state.software,
+            OS: this.state.OS,
+            caller: this.state.reporter_name,
+            operator: this.state.operator_name,
+            specialist: this.state.specialist,
+            duePeriod: this.state.due,
+        };
 
-        console.log(this.state);
+        this.setState({
+            disabled: true,
+        });
+
+        axios.post('/api/query/update', {
+            updatedQuery
+        })
+            .then(function (response) {
+                alert("Your query has been updated successfully");
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
 
     handleTitle(e) {
