@@ -54,7 +54,7 @@ class Queries extends Component {
                 <Nav />
                 <Profile />
                 <h1> Queries </h1>
-                <span><Link to="/query"> Add new + </Link></span>
+                {/*<span><Link to="/query"> Add new + </Link></span>*/}
                 {
                     queries ? (
                         // Map through all the queries to render each one of them in the Query component and pass it's properties:

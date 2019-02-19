@@ -41,10 +41,13 @@ class Dashboard extends Component {
             <div className="page" id="dashboard">
                 {/*Render the nav and profile components*/}
                 <Nav />
-                <Profile initials={initials} />
+                <Profile
+                    initials={initials}
+                    type={userData[0].type}
+                />
                 <h1>Welcome, {userData[0].name}</h1>
                 {/*Render the query overview component*/}
-                <QueryOverview />
+                <QueryOverview type={userData[0].type} />
                 {/*Render the specialist overview component twice for active and inactive specialists*/}
                 <SpecialistsOverview title="Online Specialists" status="active" />
                 <SpecialistsOverview title="Offline Specialists" status="inactive" />

@@ -92,7 +92,9 @@ export default class Login extends Component {
                                     // to="/dashboard"
                                     to={{
                                         pathname: '/dashboard',
-                                        state: { username: this.state.username}
+                                        state: {
+                                            username: this.state.username
+                                        }
                                     }}
                                 />
                             ) : null

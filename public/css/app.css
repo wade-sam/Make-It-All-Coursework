@@ -10707,6 +10707,11 @@ nav ul li a {
   background-color: #6F99EC;
 }
 
+#add-query .edit i {
+  position: absolute;
+  right: 20px;
+}
+
 #add-query #create-query-btn {
   padding: 10px;
   background-color: #4178EE;

@@ -229,6 +229,11 @@ nav {
     }
   }
 
+  .edit i{
+    position: absolute;
+    right: 20px;
+  }
+
   #create-query-btn {
     padding: 10px;
     background-color: $darker-blue;
