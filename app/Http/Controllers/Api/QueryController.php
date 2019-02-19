@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\message;
 use Carbon\Carbon;
 use Dotenv\Validator;
 use function GuzzleHttp\Psr7\get_message_body_summary;
@@ -85,6 +86,23 @@ class QueryController extends Controller
         //
     }
 
+    public function ViewMessages($id){
+        $message = DB::table('messages')
+            ->select('content','creator','created_at')
+            ->where('messages.query_id','=',$id)
+            ->get();
+        return response()->json($message);
+    }
+
+    public function CreateMessages(Request $request){
+        $create = new App\message;
+        $create->content = $request->input('content');
+        $create->creator = $request->input('creator');
+        $create->query_id = $request->input('query_id');
+        $create->save();
+
+        return 'Success';
+    }
 
     //takes the data from the create query form and inputs it as a new query into the problem_queries table
     public function store(Request $request)
@@ -94,10 +112,10 @@ class QueryController extends Controller
         $query->title = $request->input('title');
         $query->description = $request->input('desc');
         $query->notes = $request ->input('notes');
-        $query->type = //$request ->input('type');
+        $query->type = $request ->input('type');
         $query->priority = $request ->input('priority');
         $query->system_component = $request->input('hardware');
-        $query->system_name = $request ->input('system');
+        $query->system_name = 'PC-02';//$request ->input('system');
         $query->software_name = $request->input('software');
         $query->os_name = $request->input('OS');
         $query->operator_name = $request->input('operator');
@@ -172,11 +190,18 @@ class QueryController extends Controller
         $login = DB::table('personel')
             ->select('personel.name','personel.type','personel.username','personel.password')
             ->get();
+           // updateStatus(DB::table(personel));
             return response()->json($login);
 
 
     }
-/*
+
+    public function updateStatus($id){
+        $login = App\personel::find($id);
+        $login->personel_status = 'Active';
+
+    }
+    /*
     public function queriesPerDay(){
         $query = DB::table('problem_queries')
             ->select('problem_queries.query_id',date_sub('problem_queries.created_at','-',' 1 DAY'))
@@ -187,6 +212,7 @@ class QueryController extends Controller
 
     public function edit($id)
     {
+
     }
     //Links to the edit query page. Validates and Checks that all necessary inputs in the form have been filled, then
     //links them to the columns in the problem_Query and updates them.

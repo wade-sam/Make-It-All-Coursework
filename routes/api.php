@@ -44,4 +44,8 @@ Route::get('query/display/os/{os}','Api\QueryController@showOSQuery');
 Route::get('query/display/software/{software}','Api\QueryController@showSoftware');
 
 Route::get('login','Api\QueryController@login');
+Route::get('login/update/{update}','Api\QueryController@updateStatus');
+
 Route::get('delete/{delete}','Api\QueryController@destroy');
+Route::get('message/view/{view}','Api\QueryController@mViewMessages');
+ROute::post('message/create','Api\QueryController@createMessages');
