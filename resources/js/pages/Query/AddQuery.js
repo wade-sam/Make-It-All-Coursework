@@ -15,7 +15,6 @@ class AddQuery extends Component {
             queryData:
                 {
                     title: "",
-                    id: 0,
                     desc: "",
                     notes: "",
                     type: "",
@@ -48,6 +47,7 @@ class AddQuery extends Component {
             },
             operators: [],
             specialists: [],
+            callers: [],
         }
     }
 
@@ -121,6 +121,23 @@ class AddQuery extends Component {
                 this.setState({
                     specialists: [...this.state.specialists,
                         {key: i, text: specialist.name, value: specialist.name}
+                    ]
+                });
+            });
+        }).catch(err => {
+            console.log(err);
+        })
+
+        // Get Callers from API and use only the active ones
+        axios.get('/api/query').then(res => {
+            //console.log(res.data.map(q => q.caller_name));
+
+            const callers = res.data.map(query => query.caller_name);
+
+            callers.map((caller, i) => {
+                this.setState({
+                    callers: [...this.state.callers,
+                        {key: i, text: caller, value: caller}
                     ]
                 });
             });
@@ -211,6 +228,14 @@ class AddQuery extends Component {
         });
     }
 
+    handleCaller(event) {
+        this.setState({
+            queryData: {...this.state.queryData,
+                caller: event.target.childNodes[0].nodeValue
+            }
+        });
+    }
+
     handleDue(event) {
         this.setState({
             queryData: {...this.state.queryData,
@@ -221,6 +246,10 @@ class AddQuery extends Component {
 
     createQuery() {
         // Post request to add the new created query in the API
+
+        console.log(this.state.queryData);
+
+
         axios.post('/api/query/store', {
             ...this.state.queryData
         })
@@ -233,7 +262,7 @@ class AddQuery extends Component {
     }
 
     render() {
-        const {queryData, types, hardwares, softwares, OSs, reporters, operators, specialists, priorities} = this.state;
+        const {queryData, types, hardwares, softwares, OSs, callers, operators, specialists, priorities} = this.state;
 
         return (
             <div className="page" id="add-query">
@@ -262,7 +291,7 @@ class AddQuery extends Component {
                     <div className="col-md-4">
                         <h2>Reporter</h2>
                         <hr/>
-                        <Dropdown placeholder='Full Name' selection options={types} /> <br/>
+                        <Dropdown placeholder='Full Name' selection options={callers} onChange={(e) => this.handleCaller(e)} /> <br/>
                         <Input placeholder='Tel' disabled /> <br/>
                         <Input placeholder='Email' disabled />
                     </div>

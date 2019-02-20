@@ -123,8 +123,8 @@ class QueryController extends Controller
         $query->os_name = $request->input('OS');
         $query->operator_name = $request->input('operator');
         $query->specialist_name = $request->input('specialist');
-        $query->caller_name = $request->input('caller');
-        $query->due_date = $request->input('due');
+        $query->caller_name = 'Bob';//$request->input('caller');
+        $query->due_date = $request->input('duePeriod');
         $query->status = 'open';
         $query->save();
 
