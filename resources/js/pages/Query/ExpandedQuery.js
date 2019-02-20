@@ -158,22 +158,34 @@ class AddQuery extends Component {
     saveQuery() {
         const updatedQuery = {
             title: this.state.title,
-            id: this.state.currentId,
-            desc: this.state.desc,
+            query_id: this.state.currentId,
+            description: this.state.desc,
             notes: this.state.notes,
             type: this.state.type,
-            hardware: this.state.hardware,
-            software: this.state.software,
-            OS: this.state.OS,
-            caller: this.state.reporter_name,
-            operator: this.state.operator_name,
-            specialist: this.state.specialist,
-            duePeriod: this.state.due,
+            system_name: this.state.hardware,
+            system_component: this.state.hardware,
+            software_name: this.state.software,
+            os_name: this.state.OS,
+            due_date: this.state.due,
+            caller_name: this.state.reporter_name,
+            operator_name: this.state.operator_name,
+            specialist_name: this.state.specialist,
+            priority: this.state.priority,
+            status: this.state.status,
+            created_at: '2019-02-05 00:00:00',
+            updated_at: '2019-02-05 00:00:00',
         };
+
+        // operator_name":"Cassius McKernan","specialist_name":"Edmund Blaber","caller_name":"Maegan Cunnington","title":"Microsoft Word Doesn't ' +
+        // 'Save","description":"When i click save, it freezes","notes":"possible, HDD problem?",' +
+        // '"type":"Software","system_name":"PC-01","system_component":"","software_name":"FL Studio 20","os_name":"",' +
+        // '"due_date":"2019-02-13","priority":"Low","status":"Open","created_at":"2019-02-05 00:00:00","updated_at":"2019-02-05 00:00:00"}
 
         this.setState({
             disabled: true,
         });
+
+        console.log(updatedQuery);
 
         axios.put('/api/query/update/', {
             updatedQuery
@@ -380,9 +392,13 @@ class AddQuery extends Component {
                     /> <br/>
                 </div>
 
-                <div className="row">
-                    <input type="button" id="create-query-btn" value="Edit" onClick={() => this.editQuery()} />
-                    <input type="button" id="create-query-btn" value="Save" onClick={() => this.saveQuery()} />
+                <div className="row buttons">
+                    <div className="col-md-1 offset-md-8">
+                        <input type="button" id="create-query-btn" value="Edit" onClick={() => this.editQuery()} />
+                    </div>
+                    <div className="col-md-1">
+                        <input type="button" id="create-query-btn" value="Save" onClick={() => this.saveQuery()} />
+                    </div>
                 </div>
             </div>
 

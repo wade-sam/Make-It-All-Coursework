@@ -6,9 +6,10 @@ class OSGroup extends Component {
 
         return (
             <div className="container card analytics-card">
-                <h4>{title}</h4>
-                <h2>{number}</h2>
-                <h2>{unit}</h2>
+                <h2>{title}</h2>
+                <hr/>
+                <h1>{number}</h1>
+                {/*<h2>{unit}</h2>*/}
             </div>
         );
     }
