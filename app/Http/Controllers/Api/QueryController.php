@@ -39,7 +39,7 @@ class QueryController extends Controller
     //Fetches the  query and the name, status, due date, name, phone number, email and the status of all specialists. Displays them on the dashboard
     public function specialistsStatus(){
         $specialists = DB::table('problem_queries')
-            ->join('personel','personel.name','=','problem_queries.specialist_name')
+            ->join('personel','personel.name','=','problem_queries.specialist_name AS name')
             ->select('problem_queries.query_id','problem_queries.status','problem_queries.due_date','personel.name',
                 'personel.tel_number','personel.email','personel.personel_status')
             ->get();
@@ -50,7 +50,7 @@ class QueryController extends Controller
     public function operatorStatus(){
 
         $operators = DB::table('problem_queries')
-            ->join('personel','personel.name','=','problem_queries.operator_name')
+            ->join('personel','personel.name','=','problem_queries.operator_name AS name')
             ->select('problem_queries.query_id','problem_queries.status','problem_queries.due_date','personel.name',
                 'personel.tel_number','personel.personel_status')
             ->get();
@@ -288,19 +288,19 @@ class QueryController extends Controller
         */
         $update_query = \App\problem_query::find('5');
         $update_query->title = $request->input('title');
-        $update_query->description = $request->input('desc');
+        $update_query->description = $request->input('description');
         $update_query->notes = $request->input('notes');
         $update_query->type = $request->input('type');
         $update_query->priority = $request->input('priority');
-        $update_query->system_component = $request->input('hardware');
-        $update_query->software_name = $request->input('software');
-        $update_query->os_name = $request->input('OS');
-        $update_query->operator_name = $request->input('operator_name');
-        $update_query->specialist_name = $request->input('specialist');
+        $update_query->system_component = $request->input('system_component');
+        $update_query->software_name = $request->input('software_name');
+        $update_query->os_name = $request->input('os_name');
+        $update_query->operator_name = 'sam wade';//$request->input('operator_name');
+        $update_query->specialist_name = $request->input('specialist_name');
         $update_query->status = $request->input('status');
-        $update_query->due_date = $request->input('due');
-        $update_query->caller_name = $request->input('caller');
-        $update_query->system_name = $request->input('system');
+        $update_query->due_date = $request->input('due_date');
+        $update_query->caller_name = $request->input('caller_name');
+        $update_query->system_name = $request->input('system_name');
         $update_query->updated_at = Carbon::now();
         $update_query->save();
         return ('success');
