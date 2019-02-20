@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //Routes for the backend
 Route::post('query/store', 'Api\QueryController@store');//modifying the store route
 
-Route::put('query/update/{}','Api\QueryController@update');
+Route::put('query/update/{update}','Api\QueryController@update');
 
 //routes for the dashboard
 Route::get('dashboard/queriesOverview','Api\QueryController@queriesOverview');

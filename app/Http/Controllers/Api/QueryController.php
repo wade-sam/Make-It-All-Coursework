@@ -39,7 +39,7 @@ class QueryController extends Controller
     //Fetches the  query and the name, status, due date, name, phone number, email and the status of all specialists. Displays them on the dashboard
     public function specialistsStatus(){
         $specialists = DB::table('problem_queries')
-            ->join('personel','personel.name','=','problem_queries.specialist_name AS name')
+            ->join('personel','personel.name','=','problem_queries.specialist_name')
             ->select('problem_queries.query_id','problem_queries.status','problem_queries.due_date','personel.name',
                 'personel.tel_number','personel.email','personel.personel_status')
             ->get();
@@ -50,7 +50,7 @@ class QueryController extends Controller
     public function operatorStatus(){
 
         $operators = DB::table('problem_queries')
-            ->join('personel','personel.name','=','problem_queries.operator_name AS name')
+            ->join('personel','personel.name','=','problem_queries.operator_name')
             ->select('problem_queries.query_id','problem_queries.status','problem_queries.due_date','personel.name',
                 'personel.tel_number','personel.personel_status')
             ->get();
@@ -265,28 +265,67 @@ class QueryController extends Controller
     }
     //Links to the edit query page. Validates and Checks that all necessary inputs in the form have been filled, then
     //links them to the columns in the problem_Query and updates them.
-    public function update(Request $request, $id)
+    public function update($id, Request $request)
     {
-        /*(
+      $check = Input::all();
+     /*
+
+
+        $update = problem_query::find($id);
+        $update->title = $check['title'];
+        $update->description = $check['description'];
+        $update->notes = $check['notes'];
+        $update->type = $check['type'];
+        $update->priority = $check['priority'];
+        $update->system_component = $check['system_component'];
+        $update->software_name = $check['software_name'];
+        $update->os_name = $check['os_name'];
+        $update->operator_name = $check['operator_name'];
+        $update->specialist_name = $check['specialist_name'];
+        $update->caller_name = $check['caller_name'];
+        $update->due_date = $check['due_date'];
+        $update->save();
+
+
+      //console.log($check);
+/*
         $this->validate(request(),[
            'title'=> 'required',
-            'desc'=>'required',
+            'description'=>'required',
             'notes'=>'required',
             'type'=>'required',
             'priority'=>'required',
-            'hardware'=>'required',
-            'software'=>'required',
-            'OS'=>'required',
-            'operator'=>'required',
-            'specialist'=>'required',
-            'due'=>'required',
-            'caller'=>'required',
-            'system'=>'required',
+            'system_component'=>'required',
+            'software_name'=>'required',
+            'os_name'=>'required',
+            'operator_name'=>'required',
+            'specialist_name'=>'required',
+            'due_date'=>'required',
+            'caller_name'=>'required',
+            'system_name'=>'required',
             'priority'=>'required',
             'status'=>'required'
-        ]);
-        */
-        $update_query = \App\problem_query::find('5');
+        ]
+        );
+
+        $query->title = $request->input('title');
+        $query->description = $request->input('desc');
+        $query->notes = $request ->input('notes');
+        $query->type = $request ->input('type');
+        $query->priority = $request ->input('priority');
+        $query->system_component = $request->input('hardware');
+        $query->system_name = 'PC-02';//$request ->input('system');
+        $query->software_name = $request->input('software');
+        $query->os_name = $request->input('OS');
+        $query->operator_name = $request->input('operator');
+        $query->specialist_name = $request->input('specialist');
+        $query->caller_name = $request->input('caller');
+        $query->due_date = $request->input('due');
+        $query->status = 'open';
+        $query->save();
+
+*/
+        $update_query = problem_query::find($id);
         $update_query->title = $request->input('title');
         $update_query->description = $request->input('description');
         $update_query->notes = $request->input('notes');
@@ -304,6 +343,12 @@ class QueryController extends Controller
         $update_query->updated_at = Carbon::now();
         $update_query->save();
         return ('success');
+
+
+        $fill = problem_query::find($id);
+        $fill->fill($check);
+        $fill->save();
+
     }
 /*
     public function login(Request $request){
