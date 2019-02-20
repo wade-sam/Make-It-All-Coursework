@@ -187,7 +187,7 @@ class AddQuery extends Component {
 
         console.log(updatedQuery);
 
-        axios.put('/api/query/update/', {
+        axios.put(`/api/query/update/${updatedQuery.query_id}`, {
             updatedQuery
         })
             .then(function (response) {

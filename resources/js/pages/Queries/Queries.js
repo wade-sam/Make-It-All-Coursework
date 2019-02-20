@@ -49,6 +49,7 @@ class Queries extends Component {
 
     render() {
         const { queries } = this.state;
+
         return (
             <div className="page" id="queries">
                 <Nav />

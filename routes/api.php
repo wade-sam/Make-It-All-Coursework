@@ -54,7 +54,7 @@ Route::get('login/inactive/{inactive}','Api\QueryController@updateStatusInactive
 Route::get('delete/{delete}','Api\QueryController@destroy');
 
 //creating and viewing messages routes
-Route::get('message/view/{view}','Api\QueryController@mViewMessages');
+Route::get('message/view/{view}','Api\QueryController@ViewMessages');
 Route::post('message/create','Api\QueryController@createMessages');
 
 //analytics routes

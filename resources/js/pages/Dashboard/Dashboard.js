@@ -37,10 +37,12 @@ class Dashboard extends Component {
         let initials = userData[0].name.match(/\b\w/g) || [];
         initials = ((initials.shift() || '') + (initials.pop() || '')).toUpperCase();
 
+        console.log(this.state.userData[0].name);
+
         return (
             <div className="page" id="dashboard">
                 {/*Render the nav and profile components*/}
-                <Nav />
+                <Nav user={this.state.userData[0].name} />
                 <Profile
                     initials={initials}
                     type={userData[0].type}

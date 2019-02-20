@@ -4,22 +4,52 @@ import { Link } from 'react-router-dom';
 
 class Nav extends Component {
     render() {
+        const {user} = this.props;
+
         return (
             <Container>
                 {/*Nav component, which is later rendered on every page*/}
                 <nav>
                     <ul>
                         <li>
-                            <Link to="/dashboard"><i className="fas fa-home" /></Link>
+                            <Link
+                                to={{
+                                    pathname: '/dashboard',
+                                    state: {
+                                        username: user
+                                    }
+                                }}
+                            >
+                                <i className="fas fa-home" />
+                            </Link>
                         </li>
                         <li>
-                            <Link to="/queries"><i className="fas fa-bug" /></Link>
+                            <Link
+                                to={{
+                                    pathname: '/queries',
+                                    state: {
+                                        username: user
+                                    }
+                                }}
+                            >
+                                <i className="fas fa-bug" />
+                            </Link>
                         </li>
                         <li>
-                            <Link to="/assets"><i className="fas fa-layer-group" /></Link>
+                            <Link
+                                to={{
+                                    pathname: '/assets',
+                                    state: {
+                                        username: user
+                                    }
+                                }}
+                            ><i className="fas fa-layer-group" /></Link>
                         </li>
                         <li>
-                            <Link to="/analytics"><i className="fas fa-chart-pie" /></Link>
+                            <Link
+                                to="/analytics">
+                                <i className="fas fa-chart-pie" />
+                            </Link>
                         </li>
                         <li>
                             <Link to="/operators"><i className="fas fa-headset" /></Link>

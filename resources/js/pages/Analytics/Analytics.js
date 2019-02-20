@@ -35,7 +35,7 @@ class Analytics extends Component {
             });
         }).catch(err => {
             console.log(err);
-        })
+        });
 
         axios.get('/api/analytics/closeWeek').then(res => {
             // Store the queries in state
@@ -44,7 +44,7 @@ class Analytics extends Component {
             });
         }).catch(err => {
             console.log(err);
-        })
+        });
 
         axios.get('/api/analytics/typeWeek').then(res => {
             // Store the queries in state
@@ -69,11 +69,11 @@ class Analytics extends Component {
                     number={queriesToday}
                 />
                 <AnalyticsItem
-                    title="Close Week:"
+                    title="Closed this Week:"
                     number={closeWeek}
                 />
                 <AnalyticsItem
-                    title="Type This Week:"
+                    title="Most Common Problem Type:"
                     number={typeWeek}
                 />
             </div>
