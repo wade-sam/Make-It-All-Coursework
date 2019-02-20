@@ -37,6 +37,7 @@ class AddQuery extends Component {
                 { key: 'medium', text: 'Medium', value: 'medium' },
                 { key: 'low', text: 'Low', value: 'low' },
             ],
+            systems: [],
             hardwares: [],
             softwares: [],
             OSs: [],
@@ -91,6 +92,21 @@ class AddQuery extends Component {
                 this.setState({
                     OSs: [...this.state.OSs,
                         {key: i, text: OS.os_name, value: OS.os_name}
+                    ]
+                });
+            });
+        }).catch(err => {
+            console.log(err);
+        });
+
+        // Get systems from API
+        axios.get('/api/query/create/system').then(res => {
+            const systems = res.data;
+
+            systems.map((system, i) => {
+                this.setState({
+                    systems: [...this.state.systems,
+                        {key: i, text: system.system_name, value: system.system_name}
                     ]
                 });
             });
@@ -262,7 +278,7 @@ class AddQuery extends Component {
     }
 
     render() {
-        const {queryData, types, hardwares, softwares, OSs, callers, operators, specialists, priorities} = this.state;
+        const {queryData, types, hardwares, softwares, OSs, callers, operators, specialists, priorities, systems} = this.state;
 
         return (
             <div className="page" id="add-query">
@@ -274,7 +290,7 @@ class AddQuery extends Component {
                 </div>
                 <div className="row">
                     <Dropdown placeholder='Type' selection options={types} onChange={(e) => this.handleTypes(e)} />
-                    <Dropdown placeholder='System' selection options={hardwares} onChange={(e) => this.handleHardware(e)} />
+                    <Dropdown placeholder='System' selection options={systems} onChange={(e) => this.handleHardware(e)} />
                     <Dropdown placeholder='Affected Hardware' selection options={hardwares} onChange={(e) => this.handleHardware(e)} />
                 </div>
                 <div className="row">

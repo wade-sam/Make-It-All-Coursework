@@ -123,8 +123,8 @@ class QueryController extends Controller
         $query->os_name = $request->input('OS');
         $query->operator_name = $request->input('operator');
         $query->specialist_name = $request->input('specialist');
-        $query->caller_name = 'Bob';//$request->input('caller');
-        $query->due_date = $request->input('duePeriod');
+        $query->caller_name = 'Moria Baxster';//$request->input('caller');
+        $query->due_date = '2019-02-24';//$request->input('duePeriod');
         $query->status = 'open';
         $query->save();
 
@@ -267,27 +267,7 @@ class QueryController extends Controller
     //links them to the columns in the problem_Query and updates them.
     public function update($id, Request $request)
     {
-      $check = Input::all();
-     /*
 
-
-        $update = problem_query::find($id);
-        $update->title = $check['title'];
-        $update->description = $check['description'];
-        $update->notes = $check['notes'];
-        $update->type = $check['type'];
-        $update->priority = $check['priority'];
-        $update->system_component = $check['system_component'];
-        $update->software_name = $check['software_name'];
-        $update->os_name = $check['os_name'];
-        $update->operator_name = $check['operator_name'];
-        $update->specialist_name = $check['specialist_name'];
-        $update->caller_name = $check['caller_name'];
-        $update->due_date = $check['due_date'];
-        $update->save();
-
-
-      //console.log($check);
 /*
         $this->validate(request(),[
            'title'=> 'required',
@@ -326,6 +306,7 @@ class QueryController extends Controller
 
 */
         $update_query = problem_query::find($id);
+        $update_query->title = $request->get('title');
         $update_query->title = $request->input('title');
         $update_query->description = $request->input('description');
         $update_query->notes = $request->input('notes');
@@ -342,12 +323,11 @@ class QueryController extends Controller
         $update_query->system_name = $request->input('system_name');
         $update_query->updated_at = Carbon::now();
         $update_query->save();
+
         return ('success');
 
 
-        $fill = problem_query::find($id);
-        $fill->fill($check);
-        $fill->save();
+
 
     }
 /*
