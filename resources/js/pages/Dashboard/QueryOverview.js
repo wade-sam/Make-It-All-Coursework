@@ -40,11 +40,10 @@ class QueryOverview extends Component {
         return (
             <div className="container card" id="queries-overview">
                 <div className="row">
-                    <h2>Queries overview:</h2>
                     {
-                        this.props.type === 'Operator' ? (
+                        this.props.type === 'Specialist' ? null :(
                             <span id="add-new-btn"><Link to="/query"> Add new + </Link></span>
-                        ) : null
+                        )
                     }
                 </div>
                 <div className="row query-numbers">

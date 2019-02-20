@@ -37,8 +37,8 @@ class AddQuery extends Component {
                 { key: 'low', text: 'Low', value: 'Low' },
             ],
             statuses: [
-                { key: 'open', text: 'open', value: 'open' },
-                { key: 'closed', text: 'closed', value: 'closed' }
+                { key: 'open', text: 'Open', value: 'Open' },
+                { key: 'closed', text: 'Closed', value: 'Closed' }
             ],
             hardwares: [],
             softwares: [],
@@ -53,6 +53,7 @@ class AddQuery extends Component {
         // Get individual query's data from API
         axios.get(`/api/query/${this.state.currentId}`).then(res => {
             // Save the API response in state to later display it on the front-end
+            console.log(res.data)
             this.setState({
                 title: res.data.title,
                 type: res.data.type,
