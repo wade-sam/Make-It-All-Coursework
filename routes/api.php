@@ -45,9 +45,21 @@ Route::get('query/display/equipment/{equipment}','Api\QueryController@showEquipm
 Route::get('query/display/os/{os}','Api\QueryController@showOSQuery');
 Route::get('query/display/software/{software}','Api\QueryController@showSoftware');
 
+//Routes for the login as well as updating the active or inactive statuses
 Route::get('login','Api\QueryController@login');
-Route::get('login/update/{update}','Api\QueryController@updateStatus');
+Route::get('login/active/{active}','Api\QueryController@updateStatusActive');
+Route::get('login/inactive/{inactive}','Api\QueryController@updateStatusInactive');
+
 
 Route::get('delete/{delete}','Api\QueryController@destroy');
+
+//creating and viewing messages routes
 Route::get('message/view/{view}','Api\QueryController@mViewMessages');
-ROute::post('message/create','Api\QueryController@createMessages');
+Route::post('message/create','Api\QueryController@createMessages');
+
+//analytics routes
+Route::get('analytics/queriesToday','Api\QueryController@queriesPerDay');
+Route::get('analytics/closeWeek','Api\QueryController@specialistClosePerWeek');
+Route::get('analytics/typeWeek','Api\QueryController@problemType');
+
+

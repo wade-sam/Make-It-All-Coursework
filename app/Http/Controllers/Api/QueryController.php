@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\message;
+use App\personel;
 use Carbon\Carbon;
 use Dotenv\Validator;
 use function GuzzleHttp\Psr7\get_message_body_summary;
@@ -13,6 +14,7 @@ use function GuzzleHttp\Promise\all;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
+
 
 
 class QueryController extends Controller
@@ -197,19 +199,65 @@ class QueryController extends Controller
 
     }
 
-    public function updateStatus($id){
-        $login = App\personel::find($id);
+    public function updateStatusActive($id){
+        $login = personel::find($id);
         $login->personel_status = 'Active';
+        $login->save();
+        return('success');
 
     }
-    /*
+
+    public function updateStatusInactive($id){
+        $login = personel::find($id);
+        $login->personel_status = 'Inactive';
+        $login->save();
+        return('success');
+
+    }
+
     public function queriesPerDay(){
+        $currentTime = Carbon::today();
         $query = DB::table('problem_queries')
-            ->select('problem_queries.query_id',date_sub('problem_queries.created_at','-',' 1 DAY'))
-            ->where('problem_queries.created_at','>' 'problem_queries.created_at')
-
+            ->select('problem_queries.query_id')
+            ->where('problem_queries.created_at','>=',$currentTime)
+            ->get();
+        $query->count();
+            return response()->json($query->count());
     }
-*/
+
+    public function specialistClosePerWeek(){
+        $currentWeek = Carbon::now();
+        $currentWeek->startOfWeek();
+        $query = DB::table('problem_queries')
+            ->select('problem_queries.specialist_name')
+            ->orderBy('problem_queries.specialist_name')
+            ->where('problem_queries.status','=','Closed')
+            ->where('problem_queries.created_at','>=',$currentWeek)
+            ->get();
+        return response()->json($query->count());
+    }
+    public function problemType(){
+        $currentWeek = Carbon::now();
+        $currentWeek ->startOfWeek();
+        $query = DB::table('problem_queries')
+            ->select('problem_queries.type')
+            ->orderBy('problem_queries.type')
+            ->where('problem_queries.created_at','>=',$currentWeek)
+        ->get();
+        return response()->json($query);
+    }
+
+    public function TimeToComplete(){
+        $query = DB::table('problem_queries')
+            ->select('problem_queries.created');
+    }
+
+    public function specialistQueries($id){
+        $query = DB::table('problemQueries')
+            ->select('problem_queries.');
+    }
+
+
 
     public function edit($id)
     {
@@ -253,7 +301,7 @@ class QueryController extends Controller
         $update_query->due_date = $request->input('due');
         $update_query->caller_name = $request->input('caller');
         $update_query->system_name = $request->input('system');
-       // $update_query->updated_at = Carbon\Carbon::now();
+        $update_query->updated_at = Carbon::now();
         $update_query->save();
         return ('success');
     }
