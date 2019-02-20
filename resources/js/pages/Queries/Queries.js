@@ -35,7 +35,7 @@ class Queries extends Component {
         alert(`Are you sure you want to delete query ${id}`);
         console.log(id -1);
 
-        axios.delete(`/api/query/${this.state.queries[id-1]}`);
+        axios.delete(`/api/delete/${this.state.queries[id-1]}`);
 
         // Create a copy of current queries array
         const newQueries = [...this.state.queries];
