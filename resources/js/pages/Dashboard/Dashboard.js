@@ -34,10 +34,9 @@ class Dashboard extends Component {
 
     render() {
         const { userData } = this.state;
+
         let initials = userData[0].name.match(/\b\w/g) || [];
         initials = ((initials.shift() || '') + (initials.pop() || '')).toUpperCase();
-
-        console.log(this.state.userData[0].name);
 
         return (
             <div className="page" id="dashboard">
